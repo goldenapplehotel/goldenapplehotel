@@ -1,5 +1,5 @@
 
-<div id="page-wrapper">
+
 
             <!-- /.row -->
 <!--            <div class="row">-->
@@ -534,7 +534,5 @@
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
 
 

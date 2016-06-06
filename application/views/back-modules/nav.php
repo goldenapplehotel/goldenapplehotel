@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Sun Dara</a>
+        <a class="navbar-brand" href="#"><img src="<?php echo BASE_URL;?>assets/img/logo/new-logo2.png" width="70px"  > </a>
     </div>
     <!-- /.navbar-header -->
 
@@ -244,10 +244,10 @@
                     <a href="<?php echo base_url('contents');?>"><i class="fa fa-home fa-fw"></i> Home</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Layout<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Flot Charts</a>
+                            <a href="<?php echo base_url('contents/banner');?>">Banner</a>
                         </li>
                         <li>
                             <a href="morris.html">Morris.js Charts</a>

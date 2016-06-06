@@ -17,4 +17,13 @@ class Contents extends MX_Controller {
 
 	}
 
+	public function banner()
+	{
+		$data['main_content'] = 'banner';
+		$this->load->view('back-modules/template', $data);
+
+
+	}
+
+
 }

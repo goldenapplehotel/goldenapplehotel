@@ -10,8 +10,6 @@
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/admin-bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/metisMenu.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/raphael-min.js"></script>
-    <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/morris.min.js"></script>
-    <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/morris-data.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/sb-admin-2.js"></script>
 
 
@@ -32,10 +30,10 @@
 
 <div id="wrapper">
 
-    <?php
-    include('nav.php');
-    $this->load->view($main_content);
-    ?>
+    <?php include('nav.php');?>
+    <div id="page-wrapper">
+    <?php $this->load->view($main_content); ?>
+    </div>
 </div>
 
 </body>
