@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-2.0.2.min.js"></script>
-    <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/admin-bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/metisMenu.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/raphael-min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/morris.min.js"></script>

@@ -1,3 +1,7 @@
+<div id="subheader">
+    <h1>EXPLORE</h1>
+    <h3>Five Stars Hotel</h3>
+</div>
 <div id="content" class="no-top no-bottom">
     <section id="explore-1" class="side-bg">
         <div class="col-md-6 col-md-offset-6 pull-right image-container">

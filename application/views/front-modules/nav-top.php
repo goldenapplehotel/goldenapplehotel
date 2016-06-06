@@ -4,7 +4,7 @@
     <div id="logo">
         <div class="inner">
             <a href="<?php echo BASE_URL;?>cms/index">
-                <img src="<?php echo BASE_URL;?>assets/img/logo/logos.jpg" alt="" width="100px" height="30px"></a>
+                <img src="<?php echo BASE_URL;?>assets/img/logo/new-logo2.png" alt="" ></a>
         </div>
     </div>
     <!-- logo close -->

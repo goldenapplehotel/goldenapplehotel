@@ -1,9 +1,5 @@
 
 <div class="clearfix"></div>
-
-
-
-
 <!-- content begin -->
 <div id="content" class="no-top no-bottom">
     <div class="fx custom-carousel-1">
@@ -131,47 +127,7 @@
     </section>
 
 
-    <section id="section-about-1" class="dark side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-right image-container">
-            <div class=""><img class="img-responsive" src="img/room1.jpg"> </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="inner-padding">
-                        <ul class="client-quotes animated" data-animation="fadeIn">
-                            <li>
-                                <div class="text">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                </div>
-                                <span class="name">Tina Tunnel</span>
-                                <span class="company">Microsoft</span>
-                            </li>
-
-                            <li>
-                                <div class="text">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                </div>
-                                <span class="name">Sandra Bullock</span>
-                                <span class="company">Apple</span>
-                            </li>
-
-                            <li>
-                                <div class="text">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                </div>
-                                <span class="name">Angelina</span>
-                                <span class="company">Samsung</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </section>
+  
 
 
     <section class="call-to-action text-center">

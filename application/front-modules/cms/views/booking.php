@@ -1,3 +1,7 @@
+<div id="subheader">
+    <h1>BOOKING</h1>
+    <h3>Five Stars Hotel</h3>
+</div>
 <div id="content">
     <div class="container">
         <div class="row">

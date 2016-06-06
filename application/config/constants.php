@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 defined('BASE_URL') OR define ('BASE_URL','http://goldenapplehotel.dev/');
 defined('SITE_DIR') OR define ('SITE_DIR', '/');
 
-define('DB_NAME','ci_sample');
+define('DB_NAME','goldenapplehotel');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
 //defined('BASE_URL') OR define ('BASE_URL','http://trip2cambodia.com/');

@@ -88,7 +88,7 @@ header #logo .inner {
 - - - - - - - - - - - - - - - - - - - - */
 #subheader {
     padding:120px 0;
-    background:url(../img/bg-1.jpg) top center no-repeat;
+    background:url(../img/banner/bg-1.jpg) top center no-repeat;
     text-align:center;
     text-transform:uppercase
 }
@@ -917,10 +917,12 @@ section.dark {
     position:absolute;
     bottom:0;
     background:#edb83a;
+    opacity: 0.7;
     padding:35px 30px 20px;
     width:100%;
     height:84px;
-    text-align:center
+    text-align:center;
+
 }
 
 .room-item {
@@ -933,10 +935,12 @@ section.dark {
 }
 
 .room-item .desc {
+
     height:0;
     color:#333;
     padding-left:30px;
     padding-right:30px
+
 }
 
 .price {
