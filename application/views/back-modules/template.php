@@ -20,7 +20,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/sb-admin-2.css">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/morris.css">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/font-awesome.css">
-
+    <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/admin-style.css">
 
 
 <!--    <link type="text/css" rel="stylesheet" href="--><?php //echo BASE_URL;?><!--assets/css/admin.css">-->

@@ -33,6 +33,10 @@ define('NEW_BUSINESS_URL','mypage/new_business');
 define('NEW_HOTEL_URL','mypage/new_hotel');
 define('NEW_RESTAURANT_URL','mypage/new_restaurant');
 define('NEW_BAKERY_URL','mypage/new_bakery');
+
+define('ALLOWED_TYPES','gif|jpg|png|jpeg');
+define('FILE_UPLOAD_PATH', '../assets/img');
+define('FILE_UPLOAD_MAX_SIZE', '0');//No Limit
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
