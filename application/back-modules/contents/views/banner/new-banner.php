@@ -1,4 +1,7 @@
 
+<div class="well well-sm">
+   New banner
+</div>
 <?php echo form_open_multipart('contents/save_banner');?>
 
 <div class="thumbnail pd-10">
@@ -22,7 +25,7 @@
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Photo<span class="red">*</span></div>
-        <div class="col-md-4"><input type="file" name="file_name" class="form-control"></div>
+        <div class="col-md-4"><input type="file" name="file_name" class="form-control" required></div>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2"> </div>
@@ -31,6 +34,15 @@
         </div>
 
     </div>
+
+    <div class="row mg-top-10">
+        <div class="col-md-2"> </div>
+        <div class="col-md-10 orange">
+             <?php echo $result;?>
+        </div>
+
+    </div>
+    <hr>
     <div class="row">
         <div class="col-md-12">
             <a href="<?php echo base_url('contents/banner')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
@@ -41,3 +53,6 @@
 </div>
 
 </form>
+
+
+

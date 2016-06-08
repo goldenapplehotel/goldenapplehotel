@@ -2215,7 +2215,7 @@ control nav
     #mainmenu-container {
         font-family:"Open Sans";
         position:fixed;
-        background:#333;
+        background:black;
         top:0;
         z-index:200;
         height:100%;

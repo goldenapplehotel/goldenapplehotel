@@ -5,7 +5,7 @@ class Cms extends MX_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		
+		$this->load->model('Cms_model');
 
 	}
 
@@ -22,7 +22,8 @@ class Cms extends MX_Controller {
 	}
 	
 	public function gallery(){
-
+		$data['main_gallery'] = $this->Cms_model->getMainGallery();
+		$data['gallery'] = $this->Cms_model->getGallery();
 		$data['banner'] = 'front-modules/blank';
 		$data['main_content'] = 'gallery';
 		$this->load->view('front-modules/template', $data);

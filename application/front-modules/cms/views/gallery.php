@@ -8,12 +8,13 @@
         <div class="row">
             <div class="col-md-12">
                 <ul id="filters">
-
                     <li><a href="#" data-filter="*" class="selected">show all</a></li>
-                    <li><a href="#" data-filter=".event">event</a></li>
-                    <li><a href="#" data-filter=".news">news</a></li>
-                    <li><a href="#" data-filter=".gallery">gallery</a></li>
-                    <li><a href="#" data-filter=".promotion">promotion</a></li>
+                    <?php foreach ($main_gallery->result() as $value) {?>
+
+                        <li><a href="#" data-filter=".<?php echo preg_replace('/\s+/', '', $value->en_name)?>"><?php echo  $value->en_name?></a></li>
+
+                   <?php }?>
+
 
                 </ul>
 
@@ -23,155 +24,17 @@
             <div class="col-md-12">
                 <div id="gallery" class="gallery">
 
+                    <?php foreach ($gallery->result() as $value_new) {?>
                     <!-- <h4>Gallery Title -->
-                    <div class="item news">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g1.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g1.jpg" alt="" class="img-responsive">
+                    <div class="item <?php echo preg_replace('/\s+/', '',$value_new->en_name)?>">
+                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/<?php echo $value_new->url;?>" data-gal="prettyPhoto" title="Your Title">
+                            <img src="<?php echo BASE_URL;?>assets/img/gallery/<?php echo $value_new->url;?>" alt="" class="img-responsive">
                         </a>
-                        <h4>Gallery Title 1</h4>
+                        <h4><?php echo $value_new->title?></h4>
                         <span>November 10, 2013</span>
                     </div>
                     <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g2.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g2.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 2</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item promotion news">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g3.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g3.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 3</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item event">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g4.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g4.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 4</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item promotion gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g5.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g5.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 5</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item news">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g6.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g6.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 6</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item event gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g7.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g8.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 7</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g8.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g8.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 8</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g9.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g9.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 9</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g10.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g10.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 10</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g11.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g11.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 11</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g12.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g12.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 12</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g13.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g13.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 13</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g14.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g14.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 14</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-                    <!-- close <h4>Gallery Title -->
-
-                    <!-- <h4>Gallery Title -->
-                    <div class="item gallery">
-                        <a class="preview" href="<?php echo BASE_URL;?>assets/img/gallery/g15.jpg" data-gal="prettyPhoto" title="Your Title">
-                            <img src="<?php echo BASE_URL;?>assets/img/gallery/g15.jpg" alt="" class="img-responsive">
-                        </a>
-                        <h4>Gallery Title 15</h4>
-                        <span>November 10, 2013</span>
-                    </div>
-
+                    <?php }?>
 
                 </div>
 
@@ -179,3 +42,4 @@
         </div>
     </div>
 </div>
+
