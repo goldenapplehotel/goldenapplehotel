@@ -57,6 +57,16 @@
                     <a href="#">
                         <img src="<?php echo BASE_URL;?>assets/img/icons/vimeo.png" alt=""></a>
                 </div>
+
+                <h3>Language</h3>
+                <div class="social-icons">
+                    <a  href="#">
+                        <img width="45px" height="34px" src="<?php echo BASE_URL;?>assets/img/icons/eng.png">
+                    </a>
+                    <a  href="<?php echo BASE_URL;?>">
+                        <img width="45px" height="34px" src="<?php echo BASE_URL;?>assets/img/icons/china.png">
+                    </a>
+                </div>
             </div>
         </div>
     </div>

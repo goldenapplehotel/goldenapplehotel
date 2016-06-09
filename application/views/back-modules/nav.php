@@ -10,7 +10,6 @@
         <a class="navbar-brand" href="#"><img src="<?php echo BASE_URL;?>assets/img/logo/new-logo2.png" width="70px"  > </a>
     </div>
     <!-- /.navbar-header -->
-
     <ul class="nav navbar-top-links navbar-right">
 
         <li class="dropdown">
