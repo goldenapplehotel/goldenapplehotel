@@ -59,8 +59,6 @@ echo form_open('auths/validate_credentials');
 
                 </form>
 
-
-
             </div>
         </div>
     </div>

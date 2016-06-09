@@ -200,4 +200,46 @@ class Contents extends MX_Controller
 
 
 	}
+
+	public function news(){
+		$data['main_content'] = 'news/list_news';
+		$this->load->view('back-modules/template', $data);
+	}
+
+	public function save_news(){
+
+	}
+
+	public function update_news(){
+
+	}
+
+	public function delete_news(){
+
+	}
+
+	public function save_explore(){
+
+	}
+
+	public function update_explore(){
+
+	}
+
+	public function dalete_explore(){
+
+	}
+
+	public function save_contact(){
+
+	}
+
+	public function update_contact(){
+
+	}
+
+	public function delete_contact(){
+
+	}
+
 }
