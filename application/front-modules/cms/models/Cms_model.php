@@ -12,5 +12,9 @@ class Cms_model extends CI_Model {
 		$this->db->select()->from('tbl_main_gallery');
 		return $this->db->get();
 	}
+	public function getBanner(){
+		$this->db->select()->from('tbl_banner');
+		return $this->db->get();
+	}
 }
 

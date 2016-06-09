@@ -8,9 +8,10 @@
         </div>
     </div>
     <!-- logo close -->
-
+  
     <!-- mainmenu begin -->
     <div id="mainmenu-container">
+
         <ul id="mainmenu">
             <li><a href="<?php echo BASE_URL;?>cms/index">Home</a>
                 <ul>
@@ -38,6 +39,7 @@
             </li>
             <li><a href="<?php echo BASE_URL;?>cms/gallery">Gallery</a></li>
             <li><a href="<?php echo BASE_URL;?>cms/contact">Contact</a></li>
+
         </ul>
     </div>
     <!-- mainmenu close -->
