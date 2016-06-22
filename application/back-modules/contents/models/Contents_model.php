@@ -31,5 +31,12 @@ class Contents_model extends CI_Model {
 
 	}
 
+	public function get_user_admin_pass($user_name){
+		$this->db->select()->from('ci_user');
+		$this->db->where('user_name', $user_name);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 }
 

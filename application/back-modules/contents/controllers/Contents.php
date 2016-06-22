@@ -22,6 +22,38 @@ class Contents extends MX_Controller
 
 	}
 
+	public function change_password()
+	{
+		$data['main_content'] = 'change-password';
+		$this->load->view('back-modules/template', $data);
+
+
+	}
+	
+	public function process_change_password(){
+
+		$c_password = md5($this->input->post('c_pass'));
+		$new_password = $this->input->post('n_pass');
+		$con_password = $this->input->post('con_pass');
+		$user_name = $this->session->userdata('user_name');
+		$get_password = $this->Contents_model->get_user_admin_pass($user_name);
+
+		if($get_password->password != $c_password){
+			$json = array('sms'=>1);
+			return $this->output->set_content_type('application/json')->set_output(json_encode($json));
+		}
+		if($new_password != $con_password){
+			$json = array('sms'=>0);
+			return $this->output->set_content_type('application/json')->set_output(json_encode($json));
+		}else{
+
+			$data  = array('password'=>md5($new_password));
+			$this->db->update('ci_user', $data,array('user_name'=>$user_name));
+			$json = array('sms'=>2);
+			return $this->output->set_content_type('application/json')->set_output(json_encode($json));
+		}
+
+	}
 	public function main_gallery()
 	{
 		$data['main_gallery'] = $this->Contents_model->get_all_main_gallery();
