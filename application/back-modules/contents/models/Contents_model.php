@@ -38,5 +38,17 @@ class Contents_model extends CI_Model {
 		return $query->row();
 	}
 
+	public function get_main_gallery_by_id($id){
+		$this->db->select()->from('tbl_main_gallery');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+	public function get_sub_gallery_by_id($id){
+		$this->db->select()->from('tbl_gallerys');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
 }
 

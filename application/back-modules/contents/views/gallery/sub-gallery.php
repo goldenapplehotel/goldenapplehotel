@@ -1,6 +1,7 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('')?>contents/new_sub_gallery/<?php echo $this->uri->segment(3)?>" type="button" class="btn btn-primary btn-xs">New</a>
+    <a href="<?php echo base_url('contents/main_gallery')?>">Main gallery</a>:<?php echo $main_gallery->en_name;?>
+    <a href="<?php echo base_url('')?>contents/new_sub_gallery/<?php echo $this->uri->segment(3)?>" type="button" class="btn btn-primary btn-xs pull-right">New</a>
 </div>
 <table class="table table-bordered">
     <thead>
@@ -37,7 +38,7 @@
             </td>
             <td>
 
-                <a href="<?php echo base_url()?>contents/edit_banner/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="<?php echo base_url()?>contents/edit_sub_gallery/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
         </tr>

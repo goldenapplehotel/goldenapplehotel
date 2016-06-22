@@ -67,7 +67,19 @@ class Contents extends MX_Controller
 	{
 		$id = $this->uri->segment(3);
 		$data['sub_gallery'] = $this->Contents_model->get_all_sub_gallery($id);
+		$data['main_gallery'] = $this->Contents_model->get_main_gallery_by_id($id);
 		$data['main_content'] = 'gallery/sub-gallery';
+		$this->load->view('back-modules/template', $data);
+
+
+	}
+
+	public function edit_sub_gallery()
+	{
+		$id = $this->uri->segment(3);
+		$data['result'] =   '';
+		$data['sub_gallery'] = $this->Contents_model->get_sub_gallery_by_id($id);
+		$data['main_content'] = 'gallery/edit-sub-gallery';
 		$this->load->view('back-modules/template', $data);
 
 
