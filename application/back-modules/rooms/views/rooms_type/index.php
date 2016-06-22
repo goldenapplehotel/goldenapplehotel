@@ -1,6 +1,6 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('rooms/new_feature')?>" type="button" class="btn btn-primary btn-xs">New</a>
+    <a href="<?php echo base_url('rooms/new_room_type')?>" type="button" class="btn btn-primary btn-xs">New</a>
 </div>
     <table class="table table-bordered">
         <thead>
@@ -20,8 +20,8 @@
 
             <tr>
                 <td><?php echo $key+1 ;?></td>
-                <td><?php echo $value->en_feature;?></td>
-                <td><?php echo $value->ch_feature;?></td>
+                <td><?php echo $value->en_name;?></td>
+                <td><?php echo $value->ch_name;?></td>
                 <td>
                     <?php if($value->_status ==0){
 
