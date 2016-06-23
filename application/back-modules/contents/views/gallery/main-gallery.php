@@ -1,6 +1,7 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('contents/new_main_gallery')?>" type="button" class="btn btn-primary btn-xs">New</a>
+    Main gallery
+    <a href="<?php echo base_url('contents/new_main_gallery')?>" type="button" class="btn btn-primary btn-xs pull-right">New</a>
 </div>
 <table class="table table-bordered">
     <thead>

@@ -31,5 +31,24 @@ class Contents_model extends CI_Model {
 
 	}
 
+	public function get_user_admin_pass($user_name){
+		$this->db->select()->from('ci_user');
+		$this->db->where('user_name', $user_name);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	public function get_main_gallery_by_id($id){
+		$this->db->select()->from('tbl_main_gallery');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+	public function get_sub_gallery_by_id($id){
+		$this->db->select()->from('tbl_gallerys');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
 }
 
