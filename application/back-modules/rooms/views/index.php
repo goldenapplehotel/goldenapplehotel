@@ -19,18 +19,17 @@
         <tbody>
         <?php
        
-        $n = 1;
-        foreach ($data->result() as $value)
+        foreach ($data->result() as $key => $value)
         {?>
 
             <tr>
-                <td><?php echo $n;?></td>
+                <td><?php echo $key+1;?></td>
                 <td><?php echo $value->en_title;?></td>
                 <td><?php echo $value->ch_title;?></td>
-                <td><?php echo $value->en_comfortable_title;?></td>
+                <td><?php echo $value->price;?></td>
                 <td><?php echo character_limiter($value->en_description,10);?></td>
                 <td><?php echo character_limiter($value->ch_description,10);?></td>
-                <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/banner/<?php echo $value->url?>"> </td>
+                <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/room/<?php echo $value->url?>"> </td>
                 <td>
                     <?php if($value->_status ==0){
 
@@ -47,7 +46,7 @@
                 </td>
             </tr>
 
-        <?php $n++;  } ?>
+        <?php } ?>
         </tbody>
     </table>
 
