@@ -28,7 +28,7 @@ class Rooms extends MX_Controller
 
 	public function new_room(){
 		$data['result'] =   '';
-		$data['room_type'] =   '';
+		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
 		$data['room_feature'] =   '';
 		$data['main_content'] = 'add_rooms/new_rooms';
 		$data['data']	= $this->Rooms_model->getAllFeatures();
@@ -38,7 +38,7 @@ class Rooms extends MX_Controller
 	public function save_room(){
 		
 		$config = array(
-			'upload_path'	=>FILE_UPLOAD_PATH.'/banner/',
+			'upload_path'	=>FILE_UPLOAD_PATH.'/room/',
 			'allowed_types'	=>ALLOWED_TYPES,
 			'max_size'		=>FILE_UPLOAD_MAX_SIZE,
 			'encrypt_name'	=>TRUE,
@@ -50,17 +50,15 @@ class Rooms extends MX_Controller
 
 
 			$inData = func_get_post_array($this->ci->input->post('values')); 
-
+			$inData['feature']=func_get_post_array_checkbox($this->ci->input->post('sch_checkbox'));
 			$inData['url'] =$this->upload->file_name;
-			$idx = $this->ci->Mo_Apple->insert('tbl_rooms',$inData);
-			if($idx){
-				$inDataRoomFeatur['feature']=func_get_post_array_checkbox($this->ci->input->post('sch_checkbox'));
-			}
-			// redirect('Rooms/new_room');
+			$idx = $this->db->insert('tbl_rooms',$inData);
+
+			redirect('Rooms/new_room');
 		}else{
-			// $data['result'] = 'message:'.$this->upload->display_errors();
-			// $data['main_content'] = 'banner/new-banner';
-			// $this->load->view('back-modules/template', $data);
+			$data['result'] = 'message:'.$this->upload->display_errors();
+			$data['main_content'] = 'Rooms/new_room';
+			$this->load->view('back-modules/template', $data);
 
 		}
 		

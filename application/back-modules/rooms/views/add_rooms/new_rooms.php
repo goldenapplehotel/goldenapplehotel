@@ -17,11 +17,21 @@
         <div class="col-md-2">Room Type</div>
         <div class="col-md-4">
             <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <?php
+       
+            foreach ($room_type->result() as $key => $value)
+            {?>
+                <option value="<?php echo $value->Id;?>">
+                <?php 
+                    
+                    if($value->ch_name){
+                       echo $value->en_name.' / '. $value->ch_name;
+                    }
+                    echo $value->en_name;
+                ?>
+
+                </option>
+            <?php   } ?>
             </select>
         </div>
     </div>
@@ -55,7 +65,7 @@
         <fieldset>
             <div class="col-md-12">
                 <legend>
-                    Basic
+                    Features
                 </legend>
             </div>
             <?php
