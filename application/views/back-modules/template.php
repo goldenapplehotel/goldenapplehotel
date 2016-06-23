@@ -15,6 +15,8 @@
 
 
     <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/bootstrap.css">
+    <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/bower_components/Font-Awesome/css/font-awesome.css">
+    <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/build.css">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/metisMenu.min.css">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/timeline.css">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/sb-admin-2.css">

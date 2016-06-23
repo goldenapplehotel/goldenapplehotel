@@ -84,7 +84,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 //$autoload['helper'] = array();
-$autoload['helper'] = array('url', 'form', 'cookie','language','file','text');
+$autoload['helper'] = array('url', 'form', 'cookie','language','file','text','iw_common_func');
 
 /*
 | -------------------------------------------------------------------
@@ -127,4 +127,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('mo_apple');
