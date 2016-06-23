@@ -15,6 +15,7 @@ class Cms extends MX_Controller {
     }
 	public function index()
 	{
+		$data['get_room'] = $this->Cms_model->getRoom();
 		$data['data_banner'] = $this->Cms_model->getBanner();
 		$data['banner'] = 'front-modules/banner';
 		$data['launchpad'] = 'front-modules/launchpad';

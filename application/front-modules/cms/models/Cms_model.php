@@ -16,5 +16,12 @@ class Cms_model extends CI_Model {
 		$this->db->select()->from('tbl_banner');
 		return $this->db->get();
 	}
+
+	public function getRoom(){
+		$this->db->select()->from('tbl_rooms');
+		$this->db->where('front_status', 0);
+		return $this->db->get();
+	}
+
 }
 
