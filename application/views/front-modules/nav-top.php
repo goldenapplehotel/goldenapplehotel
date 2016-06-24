@@ -13,12 +13,7 @@
     <div id="mainmenu-container">
 
         <ul id="mainmenu">
-            <li><a href="<?php echo BASE_URL;?>cms/index">Home</a>
-                <ul>
-                    <li><a href="index.html">Homepage 1</a>
-                    <li><a href="index-2.html">Homepage 2</a>
-                </ul>
-            </li>
+            <li><a href="<?php echo BASE_URL;?>cms/index">Home</a></li>
             <li><a href="<?php echo BASE_URL;?>cms/explore">Explore</a></li>
             <li><a href="room-list.html">Room</a>
                 <ul>

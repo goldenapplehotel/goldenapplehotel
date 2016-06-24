@@ -3,10 +3,11 @@
 <!-- content begin -->
 <div id="content" class="no-top no-bottom">
     <div class="fx custom-carousel-1">
+        <?php foreach ($get_room->result() as $value){?>
         <div class="room-item item">
             <div class="overlay">
                 <a href="single-room.html">
-                    <h1>Deluxe Room</h1>
+                    <h1><?php echo $value->en_tilte?></h1>
                 </a>
                 <div class="desc">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
@@ -16,7 +17,7 @@
             </div>
             <img src="<?php echo BASE_URL;?>assets/img/room/room1.jpg" alt="">
         </div>
-
+        <?php }?>
         <div class="room-item item">
             <div class="overlay">
                 <a href="single-room.html">
@@ -74,8 +75,6 @@
             <img src="<?php echo BASE_URL;?>assets/img/room/room5.jpg" alt="">
         </div>
 
-
-
     </div>
 
     <section>
@@ -124,14 +123,6 @@
             </div>
 
         </div>
-    </section>
-
-
-  
-
-
-    <section class="call-to-action text-center">
-        <a href="#" class="btn-big-border">Make Your Reservation</a>
     </section>
 
 
