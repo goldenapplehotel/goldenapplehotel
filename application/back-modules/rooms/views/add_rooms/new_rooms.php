@@ -76,7 +76,12 @@
                 <div class="checkbox checkbox-warning">
                     <input id="checkbox<?php echo $key;?>" type="checkbox" name="sch_checkbox[]"  value="<?php echo $value->Id;?>" class="styled" >
                     <label for="checkbox<?php echo $key;?>">
-                        <?php echo $value->en_feature;?> / <?php echo $value->ch_feature;?>
+                        <?php 
+                            if($value->ch_feature){
+                                echo $value->en_feature.' / '.$value->ch_feature;
+                            }
+                            echo $value->en_feature;
+                        ?> 
                     </label>
                 </div>
             </div>
