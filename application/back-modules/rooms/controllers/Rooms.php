@@ -198,7 +198,7 @@ class Rooms extends MX_Controller
 
 		$id = $this->uri->segment(3);
 		$data['result'] =   '';
-		$data['row']= $this->Rooms_model->get_feature_by_id($id)->result()[0];
+		$data['row']= $this->Rooms_model->getFeatureById($id)->result()[0];
 		// var_dump($data['row']);
 		$data['main_content'] = 'feature/edit_feature';
 		$this->load->view('back-modules/template', $data);
@@ -211,6 +211,13 @@ class Rooms extends MX_Controller
 			'en_feature' 	            		=>$this->input->post('en_feature'),
 		);
 		$this->db->update('tbl_features', $data,array('Id'=>$id));
+		redirect('rooms/list_feature');
+	}
+
+	public function delete_feature(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_features',$Id);
 		redirect('rooms/list_feature');
 	}
 
@@ -246,7 +253,28 @@ class Rooms extends MX_Controller
 
 	}
 
+	public function edit_room_type(){
+		$id = $this->uri->segment(3);
+		$data['result'] =   '';
+		$data['data']= $this->Rooms_model->getRoomTypeById($id)->result()[0];
+		$data['main_content'] = 'rooms_type/edit_room_type';
+		$this->load->view('back-modules/template', $data);
+	}
 
+	public function update_room_type(){
+		$Id = $this->input->post('Id');
+		$data = func_get_post_array($this->ci->input->post('values')); 
+		$this->db->update('tbl_rooms_type', $data,array('Id'=>$Id));
+		redirect('rooms/list_room_type');
+		// var_dump($data);
+	}
+
+	public function delete_room_type(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_rooms_type',$Id);
+		redirect('rooms/list_room_type');
+	}
 	public function delete_room_thun(){
 		$RoomId = $this->uri->segment(3);
 		$Id =  $this->uri->segment(4);

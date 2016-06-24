@@ -38,7 +38,11 @@ class Rooms_model extends CI_Model {
 		$this->db->insert('tbl_features',$data);
 	}
 
-	
+	public function getFeatureById($Id){
+		$this->db->select()->from('tbl_features');
+		$this->db->where('Id', $Id);
+		return $this->db->get();
+	}
 
 	public function getRoomGalleryByRoomId($Id){
 		$this->db->select()->from('tbl_rooms_gallery');
