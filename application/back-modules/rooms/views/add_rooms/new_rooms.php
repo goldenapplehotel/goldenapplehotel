@@ -16,7 +16,7 @@
         <div class="col-md-4"><input type="text" class="form-control" name="values[price]"></div>
         <div class="col-md-2">Room Type</div>
         <div class="col-md-4">
-            <select class="form-control">
+            <select class="form-control" name="values[type_id]">
             <?php
        
             foreach ($room_type->result() as $key => $value)
@@ -42,7 +42,7 @@
         <div class="col-md-4"><textarea class="form-control" name="values[ch_description]"></textarea></div>
     </div>
     <div class="row mg-top-10">
-        <div class="col-md-2">Photo<span class="red">*</span></div>
+        <div class="col-md-2">Default Image<span class="red">*</span></div>
         <div class="col-md-4"><input type="file" name="file_name" class="form-control" required></div>
     </div>
     <div class="row mg-top-10">
@@ -70,7 +70,7 @@
             </div>
             <?php
        
-            foreach ($data->result() as $key => $value)
+            foreach ($room_feature->result() as $key => $value)
             {?>
             <div class="col-md-3">
                 <div class="checkbox checkbox-warning">
@@ -83,6 +83,31 @@
             <?php   } ?>
         </fieldset>
     </div>
+    <div class="row mg-top-10">
+        <fieldset>
+            <div class="col-md-12">
+                <legend>
+                    Room Thumbnail
+                </legend>
+            </div>
+            <div class="col-md-12">
+                <div class="mg-top-10 col-md-2">Thumbnail</div>
+                <!-- <div class="col-md-4"><input type="file" name="file_name" class="form-control" multiple="multiple"></div> -->
+                <div class="col-md-10">
+                <? for($ifile=1; $ifile <=2; $ifile ++){ ?>
+                   <div class="mg-top-10 col-md-5">
+                        <input type="file" name="file_namethum[]" class="form-control" multiple="multiple" />
+                        <? if($ifile == 10){ ?>
+                        <div style="color:red;">only more than ie10 or chrome, safari, firefox browser.</div>
+                        <? }?>
+                   </div>
+                <? } ?>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    
 
     <hr>
     
