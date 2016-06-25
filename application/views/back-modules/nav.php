@@ -34,6 +34,7 @@
         </li>
         <!-- /.dropdown -->
     </ul>
+
     <!-- /.navbar-top-links -->
 
     <div class="navbar-default sidebar" role="navigation">
@@ -78,6 +79,15 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url('contents/main_gallery');?>"><i class="fa fa-table fa-fw"></i> Gallery</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Tools<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?php echo base_url('Tools/');?>">Rooms managements</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
                 </li>
                 
             </ul>

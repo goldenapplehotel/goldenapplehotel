@@ -39,5 +39,19 @@ class Mo_apple extends CI_Model  {
 		return TRUE;
 	}
 
+	public function getAllRoomType(){
+
+		$this->db->select()->from('tbl_rooms_type');
+		return $this->db->get();
+	}
+
+
+
+	// room function
+	public function getAllRooms(){
+		$this->db->select()->from('tbl_rooms');
+		return $this->db->get();
+	}
+
 }
 ?>

@@ -78,6 +78,14 @@ function func_checkbox_validate($post_value,$val_checkbox){
 	return $chk_status;
 }
 
+function func_checkbox_check($val_checkbox){
+	$chk_status ="";
+	if($val_checkbox ==1){
+		$chk_status = 'checked="checked"';
+	}
+
+	return $chk_status ;
+}
 function func_get_post_checkbox($post_arr){
 	$sch_checkbox = array();
 	$sch_checkbox = $post_arr;
