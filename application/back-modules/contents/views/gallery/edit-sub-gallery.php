@@ -2,8 +2,9 @@
 <div class="well well-sm">
     Edit sub gallery
 </div>
-<?php echo form_open_multipart('contents/save_sub_gallery');?>
-<input type="hidden" id="" name="Id" value="<?php echo $this->uri->segment(3);;?>">
+<?php echo form_open_multipart('contents/save_edit_sub_gallery');?>
+<input type="hidden" id="" name="Id" value="<?php echo $this->uri->segment(3);?>">
+<input type="hidden" id="" name="Id_Re" value="<?php echo $this->uri->segment(4);?>">
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">
         <div class="col-md-2">Title</div>
@@ -12,16 +13,16 @@
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Date for celebrate</div>
-        <div class="col-md-4"><input type="" class="form-control" name="date" value="<?php echo $sub_gallery->create_date?>"></div>
+        <div class="col-md-4"><input type="" class="form-control" name="create_date" value="<?php echo $sub_gallery->create_date?>"></div>
 
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Photo<span class="red">*</span></div>
-        <div class="col-md-4"><input type="file" name="file_name" class="form-control" required></div>
+        <div class="col-md-4"><input type="file" name="file_name" class="form-control"></div>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Status</div>
-        <div class="col-md-4"><input type="checkbox" name="status" value="1"></div>
+        <div class="col-md-4"><input type="checkbox" <?php echo func_checkbox_check($sub_gallery->_status);?> name="status"></div>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2"></div>

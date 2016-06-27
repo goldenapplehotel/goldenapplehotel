@@ -26,10 +26,19 @@ class Contents_model extends CI_Model {
 		
 	}
 
+	public function get_all_main_gallery_by_id($id){
+		$this->db->select()->from('tbl_main_gallery');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+
+	}
+
 	public function save_main_gallery($data){
 		$this->db->insert('tbl_main_gallery', $data);
 
 	}
+	
 
 	public function get_user_admin_pass($user_name){
 		$this->db->select()->from('ci_user');
@@ -46,6 +55,33 @@ class Contents_model extends CI_Model {
 	}
 	public function get_sub_gallery_by_id($id){
 		$this->db->select()->from('tbl_gallerys');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+//	explore
+
+	public function get_all_explore(){
+		$this->db->select()->from('tbl_explores');
+		return $this->db->get();
+	}
+
+	public function get_explore_by_id($id){
+		$this->db->select()->from('tbl_explores');
+		$this->db->where('Id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+//news
+
+	public function get_all_news(){
+		$this->db->select()->from('tbl_news');
+		return $this->db->get();
+	}
+
+	public function get_news_by_id($id){
+		$this->db->select()->from('tbl_news');
 		$this->db->where('Id', $id);
 		$query = $this->db->get();
 		return $query->row();

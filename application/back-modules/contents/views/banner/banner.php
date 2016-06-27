@@ -34,7 +34,7 @@
                 <td><?php echo character_limiter($value->ch_description,10);?></td>
                 <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/banner/<?php echo $value->url?>"> </td>
                 <td>
-                    <?php if($value->_status ==0){
+                    <?php if($value->_status ==1){
 
                         echo '<i class="fa fa-check" aria-hidden="true"></i>';
                     }else{

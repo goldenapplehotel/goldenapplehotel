@@ -2343,7 +2343,11 @@ control nav
 }
 
 /* close media query */
-
 .slides .owl-wrapper-outer .owl-wrapper .owl-item li{
     list-style: none;
+
+}
+
+.fb-comments, .fb-comments iframe[style], .fb-comments span {
+    width: 100% !important;
 }
