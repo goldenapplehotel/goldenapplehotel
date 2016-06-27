@@ -23,13 +23,6 @@ class Tools extends MX_Controller
 
 	}
 
-	// public function tools_status_update(){
-	// 	$Id = $this->uri->segment(3);
-
-	// 	return 
-
-	// }
-
 	public function  tools_status_update(){
 		$id=$this->ci->input->post('Id');
 		$inData['front_status'] = $this->ci->input->post('front_status');
@@ -37,6 +30,18 @@ class Tools extends MX_Controller
 		$result = $this->ci->Mo_Apple->Update_Data($inData,$where,'tbl_rooms');
 		// echo (json_encode($inData));
 		echo $result;
+	}
+
+	public function new_nav(){
+		$data['result'] =   '';
+		$data['main_content'] = 'Tools/nav';
+		$this->load->view('back-modules/template', $data);
+	}
+
+	public function save_nav(){
+		$inData = func_get_post_array($this->ci->input->post('values')); 
+		$idx = $this->ci->Mo_Apple->insert('tbl_nav',$inData);
+		redirect('Tools/new_nav');
 	}
 }
 ?>

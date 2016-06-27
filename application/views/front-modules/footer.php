@@ -60,10 +60,10 @@
 
                 <h3>Language</h3>
                 <div class="social-icons">
-                    <a  href="#">
+                    <a  href="<?php echo $languageUrl.'/en'; ?>">
                         <img width="45px" height="34px" src="<?php echo BASE_URL;?>assets/img/icons/eng.png">
                     </a>
-                    <a  href="<?php echo BASE_URL;?>">
+                    <a  href="<?php echo $languageUrl.'/ch'; ?>">
                         <img width="45px" height="34px" src="<?php echo BASE_URL;?>assets/img/icons/china.png">
                     </a>
                 </div>

@@ -53,5 +53,19 @@ class Mo_apple extends CI_Model  {
 		return $this->db->get();
 	}
 
+	public function getLanguageData($table, $where,$lange){
+
+		$sql = '';
+		$sql .= 'SELECT * ';
+		if(is_array($where)){
+			foreach ($where as $key => $value) {
+				$sql .= ' , '.$lange.'_'.$key.' AS '.$value;
+			}
+		}
+		$sql .= ' FROM  `tbl_'.$table.'` WHERE _status=0';
+		return $this->db->query($sql);
+	}
+
+
 }
 ?>

@@ -23,5 +23,13 @@ class Cms_model extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function language_validation($arr){
+		$result = 'en';
+		if(in_array('ch',$arr)){ 
+			$result = 'ch' ;
+		}
+		return $result;
+	}
+
 }
 
