@@ -200,7 +200,7 @@ jQuery(document).ready(function() {
         items: 3,
         singleItem: false,
         pagination: false,
-        navigation: false,
+        navigation: true,
         autoPlay: false,
     });
 
