@@ -26,10 +26,17 @@ class Rooms extends MX_Controller
 
 	}
 
+	public function list_room(){
+		$data['data']	= $this->Rooms_model->getAllRooms();
+		$data['main_content'] = 'index';
+		$this->load->view('back-modules/template', $data);
+	}
+
 	public function new_room(){
 		$data['result'] =   '';
 		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
 		$data['room_feature'] =   $this->Rooms_model->getAllFeatures();
+		$data['Promotion'] =   $this->Rooms_model->getAllPromotion();
 		$data['main_content'] = 'add_rooms/new_rooms';
 		$data['data']	= '';
 		$this->load->view('back-modules/template', $data);

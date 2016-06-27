@@ -53,8 +53,8 @@ class Mo_apple extends CI_Model  {
 		return $this->db->get();
 	}
 
-	public function getLanguageData($table, $where,$lange){
-
+	public function getLanguageData($table, $where = TRUE,$lange = 'en',$param=array(),$_status=1){
+		$paramSql = array();
 		$sql = '';
 		$sql .= 'SELECT * ';
 		if(is_array($where)){
@@ -62,10 +62,28 @@ class Mo_apple extends CI_Model  {
 				$sql .= ' , '.$lange.'_'.$key.' AS '.$value;
 			}
 		}
-		$sql .= ' FROM  `tbl_'.$table.'` WHERE _status=0';
+		$sql .= ' FROM  `tbl_'.$table.'` WHERE _status='.$_status;
+		if(sizeof($param)>0){
+			foreach ($param as $key => $value) {
+				$sql .= ' AND '.$key.' = '.$value;
+				// array_push($paramSql, $value);
+			}
+		}
 		return $this->db->query($sql);
+		// return $sql;
 	}
 
+	public function getFeatureByParam($param ='' ){
+		$paramAarray = explode('^', $param);
 
+		$sql ='SELECT * FROM tbl_features WHERE _status=1 ';
+
+		foreach ($paramAarray as $key => $value) {
+			$sql .= ' OR Id =? ';
+		}
+
+		return $sql;
+		
+	}
 }
 ?>

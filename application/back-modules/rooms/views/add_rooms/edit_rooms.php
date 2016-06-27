@@ -113,7 +113,7 @@
                     <tr>
                         <th>N</th>
                         <th>Room Thumbnail</th>
-                        <th>Change Image</th>
+                        <th>File</th>
                         <th>Status</th>
                         <th>Action</th>
 
@@ -125,9 +125,9 @@
                         <tr>
                             <td><?php echo $key+1;?></td>
                             <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/room/<?php echo $value->url?>"> </td>
-                            <td><input type="file" name="file_namethum[]" class="form-control" multiple="multiple" /></td>
+                            <td></td>
                             <td>
-                                <?php if($value->_status ==0){
+                                <?php if($value->_status ==1){
 
                                     echo '<i class="fa fa-check" aria-hidden="true"></i>';
                                 }else{
@@ -143,21 +143,19 @@
                     <?php } ?>
                     </tbody>
                     <?php
-                        if($rowCount < 1){
+                        if($rowCount < 3){
+                            for($i=$rowCount+1; $i<=3; $i++){
+                                $inx = $i+1;
+                                echo '<tr>';
+                                echo '<th >'.$inx.'</th>';
+                                echo '<th ></th>';
+                                echo '<td ><input type="file" name="file_namethum[]" class="form-control" multiple="multiple" /></td>';
+                                echo '<th ></th>';
+                                echo '<th ></th>';
+                                echo '</tr>';
+                            }
+                        }
                     ?>
-
-                    <tr>
-                        <th colspan="2"></th>
-                        <td ><input type="file" name="file_namethum[]" class="form-control" multiple="multiple" /></td>
-                        <th ></th>
-                        <th>
-                            <!-- <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-plus-square" aria-hidden="true"></i></a> -->
-                        </th>
-                        
-                    </tr>
-
-
-                    <?php } ?>
                 </table>
             </div>
         </fieldset>
@@ -167,7 +165,7 @@
     
     <div class="row">
         <div class="col-md-12">
-            <a href="<?php echo base_url('contents/banner')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
+            <a href="<?php echo base_url('Rooms/list_room')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
             <button type="submit" class="btn btn-primary btn-xs pull-right mg-right">Save</button>
 
         </div>

@@ -2343,3 +2343,7 @@ control nav
 }
 
 /* close media query */
+
+.slides .owl-wrapper-outer .owl-wrapper .owl-item li{
+    list-style: none;
+}

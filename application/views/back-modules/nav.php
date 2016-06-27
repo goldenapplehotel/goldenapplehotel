@@ -47,7 +47,7 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Rooms<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo base_url('rooms');?>">Rooms</a>
+                            <a href="<?php echo base_url('rooms/list_room');?>">Rooms</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('rooms/list_feature');?>">Features</a>
@@ -88,6 +88,9 @@
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="<?php echo base_url('Promotions/list_promotion');?>"><i class="fa fa-table fa-fw"></i> Promotions</a>
                 </li>
                 
             </ul>

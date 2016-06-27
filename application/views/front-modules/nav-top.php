@@ -24,7 +24,7 @@
             echo '<div id="mainmenu-container">';
             echo '<ul id="mainmenu">';
             foreach ($navs->result() as $key => $value) {
-                if($value->_models == 'room'){
+                if($value->_models == 'hotel'){
                     echo '<li><a href=" '.BASE_URL.'cms/'.$value->_models.'/'.$lang.' ">'.$value->title.'</a>';
                         echo '<ul>';
                             foreach ($data->result() as $key => $value1)

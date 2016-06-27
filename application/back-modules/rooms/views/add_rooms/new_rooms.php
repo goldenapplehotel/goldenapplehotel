@@ -26,8 +26,10 @@
                     
                     if($value->ch_name){
                        echo $value->en_name.' / '. $value->ch_name;
+                    }else{
+                       echo $value->en_name; 
                     }
-                    echo $value->en_name;
+                    
                 ?>
 
                 </option>
@@ -44,6 +46,28 @@
     <div class="row mg-top-10">
         <div class="col-md-2">Default Image<span class="red">*</span></div>
         <div class="col-md-4"><input type="file" name="file_name" class="form-control" required></div>
+        <div class="col-md-2">Promotions</div>
+        <div class="col-md-4">
+            <select class="form-control" name="values[promotion_id]">
+            <option value=""></option>
+            <?php
+                
+            foreach ($Promotion->result() as $key => $value)
+            {?>
+                <option value="<?php echo $value->Id;?>">
+                <?php 
+                    
+                    if($value->ch_title){
+                       echo $value->en_title.' / '. $value->ch_title;
+                    }else{
+                       echo $value->ch_title; 
+                    }
+                    
+                ?>
+
+                </option>
+            <?php   } ?>
+            </select>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2"> </div>
@@ -118,7 +142,7 @@
     
     <div class="row">
         <div class="col-md-12">
-            <a href="<?php echo base_url('contents/banner')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
+            <a href="<?php echo base_url('Rooms/list_room')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
             <button type="submit" class="btn btn-primary btn-xs pull-right mg-right">Save</button>
 
         </div>

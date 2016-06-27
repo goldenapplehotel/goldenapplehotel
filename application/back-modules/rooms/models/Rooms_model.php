@@ -7,6 +7,11 @@ class Rooms_model extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function getAllPromotion(){
+		$this->db->select()->from('tbl_promotions');
+		return $this->db->get();
+	}
+
 	public function getAllRoomType(){
 		$this->db->select()->from('tbl_rooms_type');
 		return $this->db->get();

@@ -30,6 +30,15 @@ class Cms_model extends CI_Model {
 		}
 		return $result;
 	}
+	public function validate_Data_In_Array($data=array(), $where= TRUE){
+		$result= FALSE;
+		if(is_array($data)){
+			if(in_array($where, $data)){
+				$result = $where;
+			}
+		}
+		return $result;
+	}
 
 }
 

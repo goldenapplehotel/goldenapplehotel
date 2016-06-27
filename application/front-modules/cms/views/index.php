@@ -7,15 +7,15 @@
         <div class="room-item item">
             <div class="overlay">
                 <a href="single-room.html">
-                    <h1><?php echo $value->en_title?></h1>
+                    <h1><?php echo $value->title?></h1>
                 </a>
                 <div class="desc">
-                   <?php echo $value->en_description;?>
+                   <?php echo $value->description;?>
                     <div class="price">$<?php echo $value->price;?><span>/night</span></div>
                     <a href="single-room.html" class="btn-border">View Details</a>
                 </div>
             </div>
-            <img src="<?php echo BASE_URL;?>assets/img/room/room1.jpg" alt="">
+            <img src="<?php echo BASE_URL.'assets/img/room/'.$value->url;?>" alt="">
         </div>
         <?php }?>
     </div>

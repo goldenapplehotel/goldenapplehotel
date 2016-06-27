@@ -1,6 +1,6 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('rooms/new_room')?>" type="button" class="btn btn-primary btn-xs">New</a>
+    <a href="<?php echo base_url('Promotions/new_promotion')?>" type="button" class="btn btn-primary btn-xs">new Promotion</a>
 </div>
     <table class="table table-bordered">
         <thead>
@@ -11,7 +11,6 @@
             <th>Price</th>
             <th>Description (En)</th>
             <th>Description (Ch)</th>
-            <th>Photo</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -29,7 +28,6 @@
                 <td><?php echo $value->price;?></td>
                 <td><?php echo character_limiter($value->en_description,10);?></td>
                 <td><?php echo character_limiter($value->ch_description,10);?></td>
-                <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/room/<?php echo $value->url?>"> </td>
                 <td align="center">
                     <?php if($value->_status ==1){
 
@@ -41,7 +39,7 @@
 
                 </td>
                 <td>
-                    <a href="<?php echo base_url()?>rooms/edit_room/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="<?php echo base_url()?>Promotions/edit_Promotions/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a href="<?php echo base_url().'rooms/delete_room/'.$value->Id;?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>

@@ -110,4 +110,17 @@ function func_get_post_checkbox($post_arr){
 	return $sch_checkbox;
 }
 
+function funec_get_list_checkbox($post_arr,$val_checkbox){
+	$paramAarray = explode('^', $post_arr);
+	$result = '';
+
+	foreach ($val_checkbox as $key => $value) {
+		if(in_array($value->Id, $paramAarray)){
+			$result .= '<li>'.$value->feature.'</li>';
+		}
+	}
+	return $result;
+
+}
+
 ?>
