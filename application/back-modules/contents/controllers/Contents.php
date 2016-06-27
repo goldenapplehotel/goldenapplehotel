@@ -62,6 +62,14 @@ class Contents extends MX_Controller
 
 
 	}
+	public function edit_main_gallery()
+	{
+		$data['main_gallery'] = $this->Contents_model->get_all_main_gallery_by_id();
+		$data['main_content'] = 'gallery/edit-main-gallery';
+		$this->load->view('back-modules/template', $data);
+
+
+	}
 
 	public function sub_gallery()
 	{
