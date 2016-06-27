@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2016 at 02:12 PM
--- Server version: 5.7.9
--- PHP Version: 5.6.16
+-- Generation Time: Jun 27, 2016 at 09:26 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `goldenapplehotel`
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_cookies`
 --
 
-DROP TABLE IF EXISTS `ci_cookies`;
 CREATE TABLE IF NOT EXISTS `ci_cookies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cookie_id` varchar(255) DEFAULT NULL,
@@ -38,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `ci_cookies` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -46,12 +45,11 @@ CREATE TABLE IF NOT EXISTS `ci_cookies` (
 -- Table structure for table `ci_sessions`
 --
 
-DROP TABLE IF EXISTS `ci_sessions`;
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
   `ip_address` varchar(45) NOT NULL DEFAULT '0',
   `user_agent` varchar(120) NOT NULL,
-  `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
   `user_data` text NOT NULL,
   PRIMARY KEY (`session_id`),
   KEY `last_activity_idx` (`last_activity`)
@@ -75,7 +73,6 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 -- Table structure for table `ci_user`
 --
 
-DROP TABLE IF EXISTS `ci_user`;
 CREATE TABLE IF NOT EXISTS `ci_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -91,14 +88,14 @@ CREATE TABLE IF NOT EXISTS `ci_user` (
   `phone1` varchar(50) DEFAULT NULL,
   `phone2` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `ci_user`
 --
 
 INSERT INTO `ci_user` (`id`, `first_name`, `last_name`, `email`, `user_name`, `password`, `photo`, `enabled`, `last_login`, `address1`, `address2`, `phone1`, `phone2`) VALUES
-(1, 'Rin', 'Narith', 'rin_narith@yahoo.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1, '2016-06-06 14:12:03', NULL, NULL, NULL, NULL),
+(1, 'Rin', 'Narith', 'rin_narith@yahoo.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1, '2016-06-27 09:22:53', NULL, NULL, NULL, NULL),
 (6, 'Klaing', 'Ny', 'klaingny@pcspgroup.com', 'klaingny', '95ebc3c7b3b9f1d2c40fec14415d3cb8', '', 1, '0000-00-00 00:00:00', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -107,7 +104,6 @@ INSERT INTO `ci_user` (`id`, `first_name`, `last_name`, `email`, `user_name`, `p
 -- Table structure for table `tbl_banner`
 --
 
-DROP TABLE IF EXISTS `tbl_banner`;
 CREATE TABLE IF NOT EXISTS `tbl_banner` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `en_title` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -119,7 +115,15 @@ CREATE TABLE IF NOT EXISTS `tbl_banner` (
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tbl_banner`
+--
+
+INSERT INTO `tbl_banner` (`Id`, `en_title`, `ch_title`, `en_comfortable_title`, `ch_comfortable_title`, `en_description`, `ch_description`, `url`, `_status`) VALUES
+(1, 'Promotion', '', 'the hotel', '', 'special promotion', '', '2ea47110df21768aa799dac7cd952b76.jpg', 0),
+(2, 'The sunny room', '', 'confirm table room ', '', 'The sunny room are very interested ', '', '626b005961beae28716603b405e2678a.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,6 @@ CREATE TABLE IF NOT EXISTS `tbl_banner` (
 -- Table structure for table `tbl_explores`
 --
 
-DROP TABLE IF EXISTS `tbl_explores`;
 CREATE TABLE IF NOT EXISTS `tbl_explores` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `en_title` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -137,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `tbl_explores` (
   `img` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -145,13 +148,24 @@ CREATE TABLE IF NOT EXISTS `tbl_explores` (
 -- Table structure for table `tbl_features`
 --
 
-DROP TABLE IF EXISTS `tbl_features`;
 CREATE TABLE IF NOT EXISTS `tbl_features` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
-  `feature` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `en_feature` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0',
+  `ch_feature` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `tbl_features`
+--
+
+INSERT INTO `tbl_features` (`Id`, `en_feature`, `_status`, `ch_feature`) VALUES
+(1, 'Dinners', 0, '晚餐'),
+(2, 'Broadband Internet access', 0, ''),
+(4, 'Tea and Coffee making facilities', 0, ''),
+(5, 'Hair Dryer', 0, ''),
+(6, 'Iron and Ironing Board', 0, '');
 
 -- --------------------------------------------------------
 
@@ -159,15 +173,15 @@ CREATE TABLE IF NOT EXISTS `tbl_features` (
 -- Table structure for table `tbl_gallerys`
 --
 
-DROP TABLE IF EXISTS `tbl_gallerys`;
 CREATE TABLE IF NOT EXISTS `tbl_gallerys` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type` int(2) NOT NULL,
-  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_date` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0',
+  `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -175,14 +189,41 @@ CREATE TABLE IF NOT EXISTS `tbl_gallerys` (
 -- Table structure for table `tbl_main_gallery`
 --
 
-DROP TABLE IF EXISTS `tbl_main_gallery`;
 CREATE TABLE IF NOT EXISTS `tbl_main_gallery` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `en_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ch_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_nav`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_nav` (
+  `Id` int(2) NOT NULL AUTO_INCREMENT,
+  `en_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `ch_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `_status` int(2) NOT NULL DEFAULT '0',
+  `_models` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tbl_nav`
+--
+
+INSERT INTO `tbl_nav` (`Id`, `en_title`, `ch_title`, `_status`, `_models`) VALUES
+(1, 'home', '家', 0, 'index'),
+(2, 'explore', '探索', 0, 'explore'),
+(3, 'room', '房间', 0, 'room'),
+(4, 'booking', '预订', 0, 'booking'),
+(5, 'news', '新闻', 0, 'news'),
+(6, 'gallery', '画廊', 0, 'gallery'),
+(7, 'contact', '联系', 0, 'contact');
 
 -- --------------------------------------------------------
 
@@ -190,7 +231,6 @@ CREATE TABLE IF NOT EXISTS `tbl_main_gallery` (
 -- Table structure for table `tbl_promotions`
 --
 
-DROP TABLE IF EXISTS `tbl_promotions`;
 CREATE TABLE IF NOT EXISTS `tbl_promotions` (
   `Id` int(2) NOT NULL AUTO_INCREMENT,
   `en_title` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -201,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `tbl_promotions` (
   `_status` int(2) NOT NULL DEFAULT '0',
   `price` float DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -209,22 +249,42 @@ CREATE TABLE IF NOT EXISTS `tbl_promotions` (
 -- Table structure for table `tbl_rooms`
 --
 
-DROP TABLE IF EXISTS `tbl_rooms`;
 CREATE TABLE IF NOT EXISTS `tbl_rooms` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `en_title` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `ch_title` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `price` double NOT NULL,
+  `price` float NOT NULL,
   `currency_id` int(2) NOT NULL DEFAULT '0',
-  `gallery_id` int(20) NOT NULL,
+  `url` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `type_id` int(2) NOT NULL,
-  `feature_id` int(2) NOT NULL,
+  `feature` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   `_slide` int(2) NOT NULL,
   `en_description` text COLLATE utf8_unicode_ci,
   `ch_description` text COLLATE utf8_unicode_ci,
+  `front_status` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `tbl_rooms`
+--
+
+INSERT INTO `tbl_rooms` (`Id`, `en_title`, `ch_title`, `price`, `currency_id`, `url`, `type_id`, `feature`, `_status`, `_slide`, `en_description`, `ch_description`, `front_status`) VALUES
+(1, 'Superior Room', 'Superior Room s', 55, 0, 'c2366c46b3f32c279d53cd7110425416.jpg', 1, '1^2^3^4^5', 0, 0, 'Superior Room s', 'Superior Room s', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_rooms_feature`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_rooms_feature` (
+  `Id` int(10) NOT NULL AUTO_INCREMENT,
+  `room_id` int(10) NOT NULL,
+  `feature_id` int(10) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -232,14 +292,23 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms` (
 -- Table structure for table `tbl_rooms_gallery`
 --
 
-DROP TABLE IF EXISTS `tbl_rooms_gallery`;
 CREATE TABLE IF NOT EXISTS `tbl_rooms_gallery` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `rooms_id` int(10) NOT NULL,
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=32 ;
+
+--
+-- Dumping data for table `tbl_rooms_gallery`
+--
+
+INSERT INTO `tbl_rooms_gallery` (`Id`, `rooms_id`, `url`, `_status`) VALUES
+(28, 1, '64bfd98e257fd314c23e4618264e5688.jpg', 0),
+(29, 1, '15ad592a3e0c60a2c814a2f133735058.jpg', 0),
+(30, 2, '4dbc5fc66b2c5cff1d10c12ea3853b78.jpg', 0),
+(31, 2, 'c73dc13ae01733783e1fb78ad7475b09.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -247,13 +316,22 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms_gallery` (
 -- Table structure for table `tbl_rooms_type`
 --
 
-DROP TABLE IF EXISTS `tbl_rooms_type`;
 CREATE TABLE IF NOT EXISTS `tbl_rooms_type` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `en_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ch_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `_status` int(2) NOT NULL DEFAULT '0',
+  `_models` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tbl_rooms_type`
+--
+
+INSERT INTO `tbl_rooms_type` (`Id`, `en_name`, `ch_name`, `_status`, `_models`) VALUES
+(1, 'Single', '单', 0, ''),
+(2, 'Family', '家庭', 0, '');
 
 -- --------------------------------------------------------
 
@@ -261,7 +339,6 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms_type` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) DEFAULT NULL,
@@ -273,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `send_email` int(11) DEFAULT '0',
   `social_id` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `users`

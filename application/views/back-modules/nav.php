@@ -66,7 +66,7 @@
                             <a href="<?php echo base_url('contents/banner');?>">Banners</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('contents/banner');?>">Explores</a>
+                            <a href="<?php echo base_url('contents/explores');?>">Explores</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('contents/banner');?>">Contacts</a>

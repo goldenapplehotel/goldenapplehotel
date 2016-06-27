@@ -15,7 +15,7 @@
     <div class="row mg-top-10">
         <div class="col-md-2">Status</div>
         <div class="col-md-10">
-            <input type="checkbox" value="1" name="status">
+            <input type="checkbox" name="status">
         </div>
 
     </div>

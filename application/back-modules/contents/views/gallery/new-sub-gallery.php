@@ -12,7 +12,7 @@
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Date for celebrate</div>
-        <div class="col-md-4"><input type="" class="form-control" name="date"></div>
+        <div class="col-md-4"><input type="" class="form-control" name="create_date"></div>
 
     </div>
     <div class="row mg-top-10">
@@ -21,7 +21,7 @@
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2">Status</div>
-        <div class="col-md-4"><input type="checkbox" name="status" value="1"></div>
+        <div class="col-md-4"><input type="checkbox" name="status"></div>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2"> </div>
