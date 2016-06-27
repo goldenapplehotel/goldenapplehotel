@@ -29,9 +29,9 @@ class Rooms extends MX_Controller
 	public function new_room(){
 		$data['result'] =   '';
 		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
-		$data['room_feature'] =   '';
+		$data['room_feature'] =   $this->Rooms_model->getAllFeatures();
 		$data['main_content'] = 'add_rooms/new_rooms';
-		$data['data']	= $this->Rooms_model->getAllFeatures();
+		$data['data']	= '';
 		$this->load->view('back-modules/template', $data);
 	}
 
@@ -52,9 +52,22 @@ class Rooms extends MX_Controller
 			$inData = func_get_post_array($this->ci->input->post('values')); 
 			$inData['feature']=func_get_post_array_checkbox($this->ci->input->post('sch_checkbox'));
 			$inData['url'] =$this->upload->file_name;
-			$idx = $this->db->insert('tbl_rooms',$inData);
-
-			redirect('Rooms/new_room');
+			$idx = $this->ci->Mo_Apple->insert('tbl_rooms',$inData);
+			
+			if($idx){
+				$num_imageUpload = count($_FILES['file_namethum']['name']);
+				for ($i = 0; $i < $num_imageUpload; $i++) {
+					if($this->upload->do_upload('file_namethum',$i)){	
+						$inDataGallery = array(
+							'rooms_id'	=>$idx,
+							'url'	=>$this->upload->file_name,
+						);
+						$result=$this->db->insert('tbl_rooms_gallery',$inDataGallery);
+					}
+				}
+			}
+			
+			redirect('Rooms');
 		}else{
 			$data['result'] = 'message:'.$this->upload->display_errors();
 			$data['main_content'] = 'Rooms/new_room';
@@ -62,6 +75,100 @@ class Rooms extends MX_Controller
 
 		}
 		
+	}
+
+	public function edit_room(){
+		
+		$Id = $this->uri->segment(3);
+		$resultData = $this->Rooms_model->getRoomById($Id)->result();
+		$data['result'] =   '';
+		$data['data']	= '';
+		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
+		$data['room_feature'] =   $this->Rooms_model->getAllFeatures();
+		$data['Thumbnail']= $this->Rooms_model->getRoomGalleryByRoomId($Id);
+		$data['main_content'] = 'add_rooms/edit_rooms';
+		if($resultData){
+			$data['data']	= $resultData[0];
+		}
+		
+		$this->load->view('back-modules/template', $data);
+	}
+
+	public function update_room(){
+		
+		$inData = func_get_post_array($this->ci->input->post('values')); 
+		// var_dump($inData);
+		// exit();
+		$Id = $inData['Id'];
+
+		$where = array('Id' =>$Id);
+		$config = array(
+			'upload_path'	=>FILE_UPLOAD_PATH.'/room/',
+			'allowed_types'	=>ALLOWED_TYPES,
+			'max_size'		=>FILE_UPLOAD_MAX_SIZE,
+			'encrypt_name'	=>TRUE,
+			'remove_spaces'	=>TRUE
+		);
+		if($this->ci->input->post('sch_checkbox')){
+			$inData['feature']=func_get_post_array_checkbox($this->ci->input->post('sch_checkbox'));
+		}
+		
+		$num_imagefile = count($_FILES['file_name']['name']);
+		if($_FILES['file_name']['size'] >0){
+			$this->load->library('upload', $config);
+			if($this->upload->do_upload('file_name')){
+				$this->load->library('image_lib');
+				
+				$inData['url'] =$this->upload->file_name;
+				$idx = $this->ci->Mo_Apple->Update_Data($inData,$where,'tbl_rooms');
+				
+				if($idx === TRUE){
+					$num_imageUpload = count($_FILES['file_namethum']['name']);
+					for ($i = 0; $i < $num_imageUpload; $i++) {
+					if($this->upload->do_upload('file_namethum',$i)){	
+						$inDataGallery = array(
+							'rooms_id'	=>$Id,
+							'url'	=>$this->upload->file_name,
+						);
+						if($_FILES['file_namethum']['size'][$i] >0){
+							$result=$this->db->insert('tbl_rooms_gallery',$inDataGallery);
+						}
+					}
+				}
+				}
+			}
+		}else{
+			$idx = $this->ci->Mo_Apple->Update_Data($inData,$where,'tbl_rooms');
+			if($idx === TRUE){
+				$num_imageUpload = count($_FILES['file_namethum']['name']);
+				// echo $num_imageUpload;
+				$this->load->library('upload', $config);
+				for ($i = 0; $i < $num_imageUpload; $i++) {
+					if($this->upload->do_upload('file_namethum',$i)){	
+						$inDataGallery = array(
+							'rooms_id'	=>$Id,
+							'url'	=>$this->upload->file_name,
+						);
+						if($_FILES['file_namethum']['size'][$i] >0){
+							$result=$this->db->insert('tbl_rooms_gallery',$inDataGallery);
+						}
+					}
+				}
+				// var_dump($_FILES['file_namethum']['size']);
+			}
+
+		}
+		
+        // exit;
+		redirect('Rooms');
+		
+	}
+
+	public function delete_room(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_rooms',$Id);
+		redirect('Rooms');
 	}
 	public function list_feature()
 	{
@@ -91,7 +198,7 @@ class Rooms extends MX_Controller
 
 		$id = $this->uri->segment(3);
 		$data['result'] =   '';
-		$data['row']= $this->Rooms_model->get_feature_by_id($id)->result()[0];
+		$data['row']= $this->Rooms_model->getFeatureById($id)->result()[0];
 		// var_dump($data['row']);
 		$data['main_content'] = 'feature/edit_feature';
 		$this->load->view('back-modules/template', $data);
@@ -104,6 +211,13 @@ class Rooms extends MX_Controller
 			'en_feature' 	            		=>$this->input->post('en_feature'),
 		);
 		$this->db->update('tbl_features', $data,array('Id'=>$id));
+		redirect('rooms/list_feature');
+	}
+
+	public function delete_feature(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_features',$Id);
 		redirect('rooms/list_feature');
 	}
 
@@ -137,6 +251,35 @@ class Rooms extends MX_Controller
 		$result =$this->db->insert('tbl_rooms_type', $userArray);
 		redirect('rooms/list_room_type');
 
+	}
+
+	public function edit_room_type(){
+		$id = $this->uri->segment(3);
+		$data['result'] =   '';
+		$data['data']= $this->Rooms_model->getRoomTypeById($id)->result()[0];
+		$data['main_content'] = 'rooms_type/edit_room_type';
+		$this->load->view('back-modules/template', $data);
+	}
+
+	public function update_room_type(){
+		$Id = $this->input->post('Id');
+		$data = func_get_post_array($this->ci->input->post('values')); 
+		$this->db->update('tbl_rooms_type', $data,array('Id'=>$Id));
+		redirect('rooms/list_room_type');
+		// var_dump($data);
+	}
+
+	public function delete_room_type(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_rooms_type',$Id);
+		redirect('rooms/list_room_type');
+	}
+	public function delete_room_thun(){
+		$RoomId = $this->uri->segment(3);
+		$Id =  $this->uri->segment(4);
+		$this->Rooms_model->deleteGalleryById($Id);
+		redirect('rooms/edit_room/'.$RoomId);
 	}
 
 }

@@ -352,3 +352,16 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.cls-pointer {
+    cursor: pointer;
+}
+
+.checkbox-tbl {
+  margin-top: 0px;
+  margin-left: 22px;
+}
+
+.mg-top-5 {
+    margin-top: 5px;
+}

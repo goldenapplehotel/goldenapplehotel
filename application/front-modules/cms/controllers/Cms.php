@@ -6,7 +6,7 @@ class Cms extends MX_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Cms_model');
-
+		$arrayNav = 'Family Room';
 	}
 
 	public function error_404(){
