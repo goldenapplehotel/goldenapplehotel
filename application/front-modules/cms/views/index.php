@@ -7,74 +7,17 @@
         <div class="room-item item">
             <div class="overlay">
                 <a href="single-room.html">
-                    <h1><?php echo $value->en_tilte?></h1>
+                    <h1><?php echo $value->en_title?></h1>
                 </a>
                 <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$199<span>/night</span></div>
+                   <?php echo $value->en_description;?>
+                    <div class="price">$<?php echo $value->price;?><span>/night</span></div>
                     <a href="single-room.html" class="btn-border">View Details</a>
                 </div>
             </div>
             <img src="<?php echo BASE_URL;?>assets/img/room/room1.jpg" alt="">
         </div>
         <?php }?>
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Luxury Room</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$299<span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
-                </div>
-
-            </div>
-            <img src="<?php echo BASE_URL;?>assets/img/room/room2.jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Premier Room</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$399<span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
-                </div>
-            </div>
-            <img src="<?php echo BASE_URL;?>assets/img/room/room3.jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Deluxe Suite</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$499<span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
-                </div>
-            </div>
-            <img src="<?php echo BASE_URL;?>assets/img/room/room4.jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Luxury Suite</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$599<span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
-                </div>
-            </div>
-            <img src="<?php echo BASE_URL;?>assets/img/room/room5.jpg" alt="">
-        </div>
-
     </div>
 
     <section>
