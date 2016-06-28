@@ -18,7 +18,7 @@
         <div class="col-md-2">Room Type</div>
         <div class="col-md-4">
             <select class="form-control" name="values[type_id]">
-                <option value="<?php echo $data->type_id;?>"><?php echo $data->roomType;?></option>
+                <option value="<?php echo $data->type_id;?>"><?php echo $data->en_name.'/ '.$data->ch_name;?></option>
             <?php
        
             foreach ($room_type->result() as $key => $value)
@@ -47,6 +47,30 @@
     <div class="row mg-top-10" >
         <div class="col-md-2">Photo<span class="red">*</span></div>
         <div class="col-md-4"><input type="file" name="file_name" class="form-control" ></div>
+        <div class="col-md-2">Promotions</div>
+        <div class="col-md-4">
+            <select class="form-control" name="values[promotion_id]">
+            <option value="<?php echo $data->promotion_id;?>"><?php echo $data->en_title_pro.'/ '.$data->ch_title_pro;?></option>
+            <?php
+                
+            foreach ($Promotion->result() as $key => $value)
+            {?>
+                
+                <?php 
+                    if($data->type_id != $value->Id ){
+                        echo '<option value="'.$value->Id.'">';
+                        if($value->ch_title){
+                           echo $value->en_title.' / '. $value->ch_title;
+                        }else{
+                           echo $value->ch_title; 
+                        }
+                    }
+                ?>
+
+                </option>
+            <?php   } ?>
+            </select>
+        </div>
     </div>
     <div class="row mg-top-10">
         <div class="col-md-2"></div>

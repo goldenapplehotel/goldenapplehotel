@@ -62,7 +62,7 @@ class Mo_apple extends CI_Model  {
 				$sql .= ' , '.$lange.'_'.$key.' AS '.$value;
 			}
 		}
-		$sql .= ' FROM  `tbl_'.$table.'` WHERE _status='.$_status;
+		$sql .= ' FROM  `tbl_'.$table.'` as ads WHERE _status='.$_status;
 		if(sizeof($param)>0){
 			foreach ($param as $key => $value) {
 				$sql .= ' AND '.$key.' = '.$value;

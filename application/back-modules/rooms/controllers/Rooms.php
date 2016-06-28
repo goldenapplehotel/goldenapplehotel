@@ -91,6 +91,7 @@ class Rooms extends MX_Controller
 		$data['result'] =   '';
 		$data['data']	= '';
 		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
+		$data['Promotion'] =   $this->Rooms_model->getAllPromotion();
 		$data['room_feature'] =   $this->Rooms_model->getAllFeatures();
 		$data['Thumbnail']= $this->Rooms_model->getRoomGalleryByRoomId($Id);
 		$data['main_content'] = 'add_rooms/edit_rooms';

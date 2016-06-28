@@ -28,7 +28,10 @@ class Rooms_model extends CI_Model {
 	}
 
 	public function getRoomById($Id){
-		$sql = 'SELECT * , (SELECT en_name from tbl_rooms_type where Id=ads.type_id) as roomType FROM `tbl_rooms` as ads WHERE Id=?';
+		$sql = 'SELECT * , (SELECT en_name from tbl_rooms_type where Id=ads.type_id) as en_name,(SELECT ch_name from tbl_rooms_type where Id=ads.type_id) as ch_name
+			,(SELECT en_title from tbl_promotions where Id=ads.promotion_id) as en_title_pro
+			,(SELECT ch_title from tbl_promotions where Id=ads.promotion_id) as ch_title_pro
+			FROM `tbl_rooms` as ads WHERE Id=?';
 		return $this->db->query($sql,array($Id));
 	}
 
