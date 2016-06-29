@@ -74,7 +74,7 @@ $( "input[type=checkbox]" ).on( "click",function(){
     countChecked();
     if(this.checked == true){
         $.ajax({
-            url:"Tools/tools_status_update",
+            url:"tools/tools_status_update",
             type:"post",
             data:{"Id":this.value,"front_status":1},
             success:function(response){
@@ -83,7 +83,7 @@ $( "input[type=checkbox]" ).on( "click",function(){
         });
     }else{
         $.ajax({
-            url:"Tools/tools_status_update",
+            url:"tools/tools_status_update",
             type:"post",
             data:{"Id":this.value,"front_status":0},
             success:function(response){

@@ -41,7 +41,7 @@ class Cms extends MX_Controller {
 		$uri = $this->uri->segment(3);
 		$data['main_gallery'] = $this->Cms_model->getMainGallery();
 		$data['gallery'] = $this->Cms_model->getGallery();
-		$data['languageUrl'] = '';
+		$data['languageUrl'] = BASE_URL.'cms/gallery';
 		$data['lang'] = 'en';
 		if($uri){
 			$data['lang'] = $uri;
@@ -54,7 +54,7 @@ class Cms extends MX_Controller {
 	public function contact(){
 		$segs = $this->uri->segment_array();
 		$data['banner'] = 'front-modules/blank';
-		$data['languageUrl'] = '';
+		$data['languageUrl'] = BASE_URL.'cms/contact';
 		$data['lang'] = 'en';
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
@@ -64,7 +64,7 @@ class Cms extends MX_Controller {
 	}
 	public function booking(){
 		$segs = $this->uri->segment_array();
-		$data['languageUrl'] = '';
+		$data['languageUrl'] = BASE_URL.'cms/booking';
 		$data['lang'] = 'en';
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
@@ -76,7 +76,7 @@ class Cms extends MX_Controller {
 
 	public function explore(){
 		$segs = $this->uri->segment_array();
-		$data['languageUrl'] = '';
+		$data['languageUrl'] = BASE_URL.'cms/explore';
 		$data['lang'] = 'en';
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
@@ -88,7 +88,7 @@ class Cms extends MX_Controller {
 
 	public function news(){
 		$segs = $this->uri->segment_array();
-		$data['languageUrl'] = '';
+		$data['languageUrl'] = BASE_URL.'cms/news';
 		$data['lang'] = 'en';
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
