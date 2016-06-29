@@ -22,6 +22,13 @@ class Rooms_model extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function get_room_thum_by_id($Id){
+		$this->db->select()->from('tbl_rooms_gallery');
+		$this->db->where('Id', $Id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 	public function getAllRooms(){
 		$this->db->select()->from('tbl_rooms');
 		return $this->db->get();
