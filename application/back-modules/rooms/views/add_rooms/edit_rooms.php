@@ -2,7 +2,7 @@
 <div class="well well-sm">
    New Rooms
 </div>
-<?php echo form_open_multipart('Rooms/update_room');?>
+<?php echo form_open_multipart('rooms/update_room');?>
 
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">
