@@ -1,6 +1,6 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('Promotions/new_promotion')?>" type="button" class="btn btn-primary btn-xs">new Promotion</a>
+    <a href="<?php echo base_url('promotions/new_promotion')?>" type="button" class="btn btn-primary btn-xs">new Promotion</a>
 </div>
     <table class="table table-bordered">
         <thead>

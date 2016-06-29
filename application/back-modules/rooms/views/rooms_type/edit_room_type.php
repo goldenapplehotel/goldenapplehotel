@@ -2,7 +2,7 @@
 <div class="well well-sm">
    Edit Room TYpe
 </div>
-<?php echo form_open_multipart('Rooms/update_room_type');?>
+<?php echo form_open_multipart('rooms/update_room_type');?>
 <input type="hidden" id="" name="Id" value="<?php echo $data->Id;?>">
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">

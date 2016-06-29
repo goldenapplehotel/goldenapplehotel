@@ -84,13 +84,13 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Tools<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo base_url('Tools/');?>">Rooms managements</a>
+                            <a href="<?php echo base_url('tools/');?>">Rooms managements</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="<?php echo base_url('Promotions/list_promotion');?>"><i class="fa fa-table fa-fw"></i> Promotions</a>
+                    <a href="<?php echo base_url('promotions/list_promotion');?>"><i class="fa fa-table fa-fw"></i> Promotions</a>
                 </li>
                 
             </ul>

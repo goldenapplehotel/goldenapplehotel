@@ -2,7 +2,7 @@
 <div class="well well-sm">
    Add New Promotions
 </div>
-<?php echo form_open_multipart('Promotions/update_Promotions');?>
+<?php echo form_open_multipart('promotions/update_Promotions');?>
 <input type="hidden" value="<?php echo $data->Id;?>" name="values[Id]">
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">
