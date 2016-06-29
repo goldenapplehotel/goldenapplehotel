@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2016 at 11:45 AM
+-- Generation Time: Jun 27, 2016 at 09:26 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `ci_user` (
 --
 
 INSERT INTO `ci_user` (`id`, `first_name`, `last_name`, `email`, `user_name`, `password`, `photo`, `enabled`, `last_login`, `address1`, `address2`, `phone1`, `phone2`) VALUES
-(1, 'Rin', 'Narith', 'rin_narith@yahoo.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1, '2016-06-29 10:48:13', NULL, NULL, NULL, NULL),
+(1, 'Rin', 'Narith', 'rin_narith@yahoo.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1, '2016-06-27 09:22:53', NULL, NULL, NULL, NULL),
 (6, 'Klaing', 'Ny', 'klaingny@pcspgroup.com', 'klaingny', '95ebc3c7b3b9f1d2c40fec14415d3cb8', '', 1, '0000-00-00 00:00:00', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `tbl_banner` (
   `en_description` text COLLATE utf8_unicode_ci,
   `ch_description` text COLLATE utf8_unicode_ci,
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1' COMMENT '0=active,1=deactive',
+  `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `tbl_explores` (
   `en_description` text COLLATE utf8_unicode_ci,
   `ch_description` text COLLATE utf8_unicode_ci,
   `img` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1' COMMENT '0=active,1=deactive',
+  `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
@@ -161,11 +161,11 @@ CREATE TABLE IF NOT EXISTS `tbl_features` (
 --
 
 INSERT INTO `tbl_features` (`Id`, `en_feature`, `_status`, `ch_feature`) VALUES
-(1, 'Dinners', 1, '晚餐'),
-(2, 'Broadband Internet access', 1, ''),
-(4, 'Tea and Coffee making facilities', 1, ''),
-(5, 'Hair Dryer', 1, ''),
-(6, 'Iron and Ironing Board', 1, '');
+(1, 'Dinners', 0, '晚餐'),
+(2, 'Broadband Internet access', 0, ''),
+(4, 'Tea and Coffee making facilities', 0, ''),
+(5, 'Hair Dryer', 0, ''),
+(6, 'Iron and Ironing Board', 0, '');
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `tbl_gallerys` (
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type` int(2) NOT NULL,
   `create_date` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1',
+  `_status` int(2) NOT NULL DEFAULT '0',
   `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `tbl_main_gallery` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `en_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ch_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1' COMMENT '0=active,1=deactive',
+  `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `tbl_nav` (
   `Id` int(2) NOT NULL AUTO_INCREMENT,
   `en_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `ch_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1',
+  `_status` int(2) NOT NULL DEFAULT '0',
   `_models` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
@@ -217,13 +217,13 @@ CREATE TABLE IF NOT EXISTS `tbl_nav` (
 --
 
 INSERT INTO `tbl_nav` (`Id`, `en_title`, `ch_title`, `_status`, `_models`) VALUES
-(1, 'home', '家', 1, 'index'),
-(2, 'explore', '探索', 1, 'explore'),
-(3, 'room', '房间', 1, 'hotel'),
-(4, 'booking', '预订', 1, 'booking'),
-(5, 'news', '新闻', 1, 'news'),
-(6, 'gallery', '画廊', 1, 'gallery'),
-(7, 'contact', '联系', 1, 'contact');
+(1, 'home', '家', 0, 'index'),
+(2, 'explore', '探索', 0, 'explore'),
+(3, 'room', '房间', 0, 'room'),
+(4, 'booking', '预订', 0, 'booking'),
+(5, 'news', '新闻', 0, 'news'),
+(6, 'gallery', '画廊', 0, 'gallery'),
+(7, 'contact', '联系', 0, 'contact');
 
 -- --------------------------------------------------------
 
@@ -238,18 +238,10 @@ CREATE TABLE IF NOT EXISTS `tbl_promotions` (
   `_type` int(2) NOT NULL DEFAULT '0' COMMENT '0=promotion,1=discount',
   `en_description` text COLLATE utf8_unicode_ci,
   `ch_description` text COLLATE utf8_unicode_ci,
-  `_status` int(2) NOT NULL DEFAULT '1',
+  `_status` int(2) NOT NULL DEFAULT '0',
   `price` float DEFAULT NULL,
-  `_percent` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `tbl_promotions`
---
-
-INSERT INTO `tbl_promotions` (`Id`, `en_title`, `ch_title`, `_type`, `en_description`, `ch_description`, `_status`, `price`, `_percent`) VALUES
-(1, 'Khmer New Years', 'Khmer New Years', 0, 'Khmer New Years', 'Khmer New Years', 1, NULL, '33');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -266,26 +258,20 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms` (
   `url` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `type_id` int(2) NOT NULL,
   `feature` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1' COMMENT '0=active,1=deactive',
+  `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   `_slide` int(2) NOT NULL,
   `en_description` text COLLATE utf8_unicode_ci,
   `ch_description` text COLLATE utf8_unicode_ci,
   `front_status` int(2) NOT NULL DEFAULT '0',
-  `promotion_id` int(10) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `tbl_rooms`
 --
 
-INSERT INTO `tbl_rooms` (`Id`, `en_title`, `ch_title`, `price`, `currency_id`, `url`, `type_id`, `feature`, `_status`, `_slide`, `en_description`, `ch_description`, `front_status`, `promotion_id`) VALUES
-(1, 'Superior Room', '高级客房', 55, 0, '4373c6cf9ce1b695e4b309822ddc1434.jpg', 1, '1^2^4^5', 1, 0, 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '高级客房', 0, 1),
-(2, 'Deluxe Double Room', '豪华双人间', 35, 0, 'bdad328bd7bd36835d1f5c98238c4e73.jpg', 1, '1^2^4^5^6', 1, 0, '', '豪华双人间 豪华双人间 豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间豪华双人间', 0, 0),
-(3, 'Deluxe Twin Room', '豪华双床房', 33, 0, 'f9ce6069a5191305ea994fedaec67174.jpg', 1, '2^4^5', 1, 0, NULL, '豪华双床房 豪华双床房 豪华双床房 豪华双床房 豪华双床房', 0, 0),
-(4, '33', '33', 33, 0, '92d3589b137c52d3d184e0d98c199160.jpg', 1, '2^4^5', 1, 0, NULL, 'fewa', 0, 1),
-(5, 'Deluxe Double Room', '', 0, 0, 'd4b8e150da49d6a4721a1e59f2b8d470.jpg', 1, '1^2^6', 1, 0, NULL, '', 0, 1),
-(6, 'aaaa', '', 222, 0, '7483e0d94dc10deb6a473bb50fb2baf9.jpg', 1, '2', 1, 0, NULL, '', 0, 0);
+INSERT INTO `tbl_rooms` (`Id`, `en_title`, `ch_title`, `price`, `currency_id`, `url`, `type_id`, `feature`, `_status`, `_slide`, `en_description`, `ch_description`, `front_status`) VALUES
+(1, 'Superior Room', 'Superior Room s', 55, 0, 'c2366c46b3f32c279d53cd7110425416.jpg', 1, '1^2^3^4^5', 0, 0, 'Superior Room s', 'Superior Room s', 1);
 
 -- --------------------------------------------------------
 
@@ -312,28 +298,17 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms_gallery` (
   `url` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `_status` int(2) NOT NULL DEFAULT '0' COMMENT '0=active,1=deactive',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `tbl_rooms_gallery`
 --
 
 INSERT INTO `tbl_rooms_gallery` (`Id`, `rooms_id`, `url`, `_status`) VALUES
-(28, 1, '64bfd98e257fd314c23e4618264e5688.jpg', 1),
-(29, 1, '15ad592a3e0c60a2c814a2f133735058.jpg', 1),
-(30, 2, '4dbc5fc66b2c5cff1d10c12ea3853b78.jpg', 1),
-(31, 2, 'c73dc13ae01733783e1fb78ad7475b09.jpg', 1),
-(32, 2, '996d4649f29a479664306e2353bc60c9.jpg', 1),
-(34, 1, 'c632fe4f7a66793487d19d74083e60bb.jpg', 1),
-(35, 1, 'd89d9835676410ffc359af9c37b95f8f.jpg', 1),
-(36, 3, '7ea8c4b1607c404af6e824bd7c0a1667.jpg', 1),
-(37, 3, '961e26cc7b0cce699f6abd31cbf7c92f.jpg', 1),
-(38, 4, 'a560601e00cd7109a8b80b3d63c698ce.jpg', 0),
-(39, 4, '33ea1e7b9a41543ff0b74d28bf6340ef.jpg', 0),
-(40, 5, '699c5f5ef46472235f7f07c71186fb0e.jpg', 0),
-(41, 5, '2b7792dc4dca687340ccd9e13adfd4fe.jpg', 0),
-(42, 6, '5420a1a70ed6160b97b25e2aacc2dd91.jpg', 0),
-(43, 6, '7b90bc063c306679559ec237226a0187.jpg', 0);
+(28, 1, '64bfd98e257fd314c23e4618264e5688.jpg', 0),
+(29, 1, '15ad592a3e0c60a2c814a2f133735058.jpg', 0),
+(30, 2, '4dbc5fc66b2c5cff1d10c12ea3853b78.jpg', 0),
+(31, 2, 'c73dc13ae01733783e1fb78ad7475b09.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -345,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms_type` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `en_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ch_name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `_status` int(2) NOT NULL DEFAULT '1',
+  `_status` int(2) NOT NULL DEFAULT '0',
   `_models` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
@@ -355,8 +330,8 @@ CREATE TABLE IF NOT EXISTS `tbl_rooms_type` (
 --
 
 INSERT INTO `tbl_rooms_type` (`Id`, `en_name`, `ch_name`, `_status`, `_models`) VALUES
-(1, 'Single', '单', 1, ''),
-(2, 'Family', '家庭', 1, '');
+(1, 'Single', '单', 0, ''),
+(2, 'Family', '家庭', 0, '');
 
 -- --------------------------------------------------------
 
