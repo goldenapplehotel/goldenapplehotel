@@ -82,7 +82,7 @@
     <div class="row mg-top-10">
         <div class="col-md-2"> </div>
         <div class="col-md-10 red">
-          Note* please select image with dimensions width= 1600px , Height= 620px.
+          Note* please select image with dimensions width= 640px , Height= 480px.
         </div>
 
     </div>

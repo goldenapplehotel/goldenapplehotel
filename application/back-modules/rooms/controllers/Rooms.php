@@ -125,6 +125,8 @@ class Rooms extends MX_Controller
 		if($_FILES['file_name']['size'] >0){
 			$this->load->library('upload', $config);
 			if($this->upload->do_upload('file_name')){
+				$row = $this->Rooms_model->getRoomById($Id)->result();
+				@unlink(FILE_UPLOAD_PATH.'/room/'.$row[0]->url);
 				$this->load->library('image_lib');
 				
 				$inData['url'] =$this->upload->file_name;
@@ -286,6 +288,8 @@ class Rooms extends MX_Controller
 	public function delete_room_thun(){
 		$RoomId = $this->uri->segment(3);
 		$Id =  $this->uri->segment(4);
+		$row = $this->Rooms_model->get_room_thum_by_id($Id);
+		@unlink(FILE_UPLOAD_PATH.'/room/'.$row->url);
 		$this->Rooms_model->deleteGalleryById($Id);
 		redirect('rooms/edit_room/'.$RoomId);
 	}
