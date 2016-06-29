@@ -2,7 +2,7 @@
 <div class="well well-sm">
    New Nav
 </div>
-<?php echo form_open_multipart('Tools/save_nav');?>
+<?php echo form_open_multipart('tools/save_nav');?>
 
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">

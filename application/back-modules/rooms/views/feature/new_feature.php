@@ -2,7 +2,7 @@
 <div class="well well-sm">
    New Rooms
 </div>
-<?php echo form_open_multipart('Rooms/save_feature');?>
+<?php echo form_open_multipart('rooms/save_feature');?>
 
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">

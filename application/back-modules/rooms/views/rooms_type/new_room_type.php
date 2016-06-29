@@ -2,7 +2,7 @@
 <div class="well well-sm">
    New Rooms Type
 </div>
-<?php echo form_open_multipart('Rooms/save_room_type');?>
+<?php echo form_open_multipart('rooms/save_room_type');?>
 
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">

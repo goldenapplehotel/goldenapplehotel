@@ -26,12 +26,15 @@
             foreach ($navs->result() as $key => $value) {
                 if($value->_models == 'hotel'){
                     echo '<li><a href=" '.BASE_URL.'cms/'.$value->_models.'/'.$lang.' ">'.$value->title.'</a>';
+                    if($data->num_rows() >0){
                         echo '<ul>';
                             foreach ($data->result() as $key => $value1)
                             {
                                 echo '<li><a href="'.BASE_URL.'cms/'.$value->_models.'/'.$value->Id.'/'.$lang.'">'.$value1->name.'</a></li>';
                             }
                         echo '</ul>';
+                    }
+                        
                     echo '</li>';
                 }else{
                     echo '<li><a href="'.BASE_URL.'cms/'.$value->_models.'/'.$lang.'">'.$value->title.'</a></li>';

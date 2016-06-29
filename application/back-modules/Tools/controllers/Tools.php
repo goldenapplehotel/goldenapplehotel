@@ -18,7 +18,7 @@ class Tools extends MX_Controller
 	{
 		
 		$data['data']	= $this->Mo_Apple->getAllRooms();
-		$data['main_content'] = 'Tools/index';
+		$data['main_content'] = 'tools/index';
 		$this->load->view('back-modules/template', $data);
 
 	}
@@ -34,7 +34,7 @@ class Tools extends MX_Controller
 
 	public function new_nav(){
 		$data['result'] =   '';
-		$data['main_content'] = 'Tools/nav';
+		$data['main_content'] = 'tools/nav';
 		$this->load->view('back-modules/template', $data);
 	}
 

@@ -2,7 +2,7 @@
 <div class="well well-sm">
   Edit Feature
 </div>
-<?php echo form_open_multipart('Rooms/update_feature');?>
+<?php echo form_open_multipart('rooms/update_feature');?>
 <input type="hidden" id="" name="Id" value="<?php echo $row->Id;?>">
 <div class="thumbnail pd-10">
     <div class="row mg-top-10">

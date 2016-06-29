@@ -77,7 +77,7 @@ class Rooms extends MX_Controller
 			redirect('rooms');
 		}else{
 			$data['result'] = 'message:'.$this->upload->display_errors();
-			$data['main_content'] = 'Rooms/new_room';
+			$data['main_content'] = 'rooms/new_room';
 			$this->load->view('back-modules/template', $data);
 
 		}
@@ -170,7 +170,7 @@ class Rooms extends MX_Controller
 		}
 		
         // exit;
-		redirect('Rooms');
+		redirect('rooms');
 		
 	}
 
@@ -178,7 +178,7 @@ class Rooms extends MX_Controller
 		$Id = $this->uri->segment(3);
 		$where = array('Id' =>$Id);
 		$this->ci->Mo_Apple->delete_data('tbl_rooms',$Id);
-		redirect('Rooms');
+		redirect('rooms');
 	}
 	public function list_feature()
 	{

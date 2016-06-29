@@ -31,8 +31,8 @@ class Cms extends MX_Controller {
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
 		}
-		$where = array('description' => 'description', 'title' =>'title', );
-		$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang']);
+		$where = array('description' => 'description', 'title' =>'title' );
+		$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang'],array('front_status'=>1));
 		$data['banner'] = 'front-modules/banner';
 		$this->load->view('front-modules/template', $data);
 	}
