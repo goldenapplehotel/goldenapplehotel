@@ -59,8 +59,9 @@ class Rooms extends MX_Controller
 			$inData = func_get_post_array($this->ci->input->post('values')); 
 			$inData['feature']=func_get_post_array_checkbox($this->ci->input->post('sch_checkbox'));
 			$inData['url'] =$this->upload->file_name;
+
 			$idx = $this->ci->Mo_Apple->insert('tbl_rooms',$inData);
-			
+		 
 			if($idx){
 				$num_imageUpload = count($_FILES['file_namethum']['name']);
 				for ($i = 0; $i < $num_imageUpload; $i++) {
