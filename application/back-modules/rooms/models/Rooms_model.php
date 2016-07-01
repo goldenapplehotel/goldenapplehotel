@@ -86,6 +86,16 @@ class Rooms_model extends CI_Model {
 	}
 
 	
+	public function getAllHotelService(){
+		$this->db->select()->from('tbl_hotel_service');
+		// $this->db->where('_status', 1);
+		return $this->db->get();
+	}
+	public function getHotelService($Id){
+		$this->db->select()->from('tbl_hotel_service');
+		$this->db->where('Id', $Id);
+		return $this->db->get();
+	}
 
 }
 

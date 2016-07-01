@@ -297,5 +297,50 @@ class Rooms extends MX_Controller
 		redirect('rooms/edit_room/'.$RoomId);
 	}
 
+	public function list_hotel_service(){
+		$data['data']	= $this->Rooms_model->getAllHotelService();
+		$data['main_content'] = 'hotel/index';
+		$this->load->view('back-modules/template', $data);
+	}
+	public function new_hotel_service(){
+		$data['data']	= '';
+		$data['result']	= '';
+		$data['main_content'] = 'hotel/write';
+		$this->load->view('back-modules/template', $data);
+	}
+	public function save_hotel_service(){
+		$inData = func_get_post_array($this->ci->input->post('values')); 
+		$idx = $this->ci->Mo_Apple->insert('tbl_hotel_service',$inData);
+		redirect('rooms/list_hotel_service');
+	}
+	public function edite_hotel_service(){
+		$Id = $this->uri->segment(3);
+		$data['data']	= $this->Rooms_model->getHotelService($Id);
+		$data['result']	= '';
+		$data['main_content'] = 'hotel/edit';
+		$this->load->view('back-modules/template', $data);
+	}
+	public function update_hotel_service(){
+		$Id =$this->ci->input->post('Id');
+		$data = func_get_post_array($this->ci->input->post('values')); 
+		$this->db->update('tbl_hotel_service', $data,array('Id'=>$Id));
+		redirect('rooms/list_hotel_service');
+	}
+	public function delete_hotel_service(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_hotel_service',$Id);
+		redirect('rooms/list_hotel_service');
+	}
+
+	public function update_hotel_service_status(){
+		$id=$this->ci->input->post('Id');
+		$inData['_status'] = $this->ci->input->post('_status');
+		$where = array('Id' =>$id);
+		$result = $this->ci->Mo_Apple->Update_Data($inData,$where,'tbl_hotel_service');
+		// echo (json_encode($inData));
+		echo $result;
+	}
+
 }
 ?>

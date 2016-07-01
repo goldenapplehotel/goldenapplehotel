@@ -1,6 +1,6 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('tools/new_nav')?>" type="button" class="btn btn-primary btn-xs">New</a>
+    <a href="<?php echo base_url('rooms/new_hotel_service')?>" type="button" class="btn btn-primary btn-xs">New</a>
     <div id="chk" class="btn btn-primary btn-xs navbar-right"></div>
 </div>
     <table class="table table-bordered">
@@ -9,10 +9,7 @@
             <th>N</th>
             <th>Title (En)</th>
             <th>Title (Ch)</th>
-            <th>Price</th>
-            <th>Description (En)</th>
-            <th>Description (Ch)</th>
-            <th>Photo</th>
+            <th>Status</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -26,25 +23,24 @@
                 <td><?php echo $key+1;?></td>
                 <td><?php echo $value->en_title;?></td>
                 <td><?php echo $value->ch_title;?></td>
-                <td><?php echo $value->price;?></td>
-                <td><?php echo character_limiter($value->en_description,10);?></td>
-                <td><?php echo character_limiter($value->ch_description,10);?></td>
-                <td><img width="50" href="20" src="<?php echo BASE_URL;?>assets/img/room/<?php echo $value->url?>"> </td>
                 <td align="center">
-                    <div class="checkbox checkbox-warning checkbox-tbl">
-                    <input id="checkbox<?php echo $key;?>" type="checkbox" name="sch_checkbox[]" value="<?php echo $value->Id;?>" class="styled" <?php 
-                    echo func_checkbox_check($value->front_status);?> >
-                    <label for="checkbox<?php echo $key;?>">
-                        
-                    </label>
-                </div>
+                    <div class="checkbox checkbox-warning checkbox-tbl" style="margin-top: -8px;">
+                        <input id="checkbox<?php echo $key;?>" type="checkbox" name="sch_checkbox[]" value="<?php echo $value->Id;?>" class="styled" <?php 
+                        echo func_checkbox_check($value->_status);?> >
+                        <label for="checkbox<?php echo $key;?>">
+                            
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <a href="<?php echo base_url()?>rooms/edite_hotel_service/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="<?php echo base_url().'rooms/delete_hotel_service/'.$value->Id;?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
 
         <?php } ?>
         </tbody>
     </table>
-
 <script>
 
 var countChecked = function() {
@@ -58,18 +54,18 @@ $( "input[type=checkbox]" ).on( "click",function(){
     countChecked();
     if(this.checked == true){
         $.ajax({
-            url:"tools/tools_status_update",
+            url:"rooms/update_hotel_service_status",
             type:"post",
-            data:{"Id":this.value,"front_status":1},
+            data:{"Id":this.value,"_status":1},
             success:function(response){
                 console.log(response);
             }
         });
     }else{
         $.ajax({
-            url:"tools/tools_status_update",
+            url:"rooms/update_hotel_service_status",
             type:"post",
-            data:{"Id":this.value,"front_status":0},
+            data:{"Id":this.value,"_status":0},
             success:function(response){
                 console.log(response);
             }
@@ -78,4 +74,3 @@ $( "input[type=checkbox]" ).on( "click",function(){
     
 } );
 </script>
-
