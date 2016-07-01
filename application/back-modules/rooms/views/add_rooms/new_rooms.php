@@ -86,7 +86,7 @@
         </div>
 
         <div class="row mg-top-10">
-            <fieldset>
+            <fieldset class="col-md-12">
                 <div class="col-md-12">
                     <legend>
                         Features
@@ -113,7 +113,7 @@
             </fieldset>
         </div>
         <div class="row mg-top-10">
-            <fieldset>
+            <fieldset class="col-md-12">
                 <div class="col-md-12">
                     <legend>
                         Room Thumbnail

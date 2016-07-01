@@ -166,7 +166,7 @@
 
                             </td>
                             <td>
-                                <a href="<?php echo base_url().'rooms/delete_room_thun/'.$data->Id.'/'.$value->Id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a href="<?php echo base_url().'rooms/delete_room_thun/'.$data->Id.'/'.$value->Id.'/'.$value->url; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

@@ -176,8 +176,11 @@ class Rooms extends MX_Controller
 
 	public function delete_room(){
 		$Id = $this->uri->segment(3);
+		$url= $this->uri->segment(4);
+		@unlink(FILE_UPLOAD_PATH.'/room/'.$url);
 		$where = array('Id' =>$Id);
 		$this->ci->Mo_Apple->delete_data('tbl_rooms',$Id);
+		$this->ci->Rooms_model->deleteGallery('rooms_gallery',$Id);
 		redirect('rooms');
 	}
 	public function list_feature()
@@ -288,8 +291,8 @@ class Rooms extends MX_Controller
 	public function delete_room_thun(){
 		$RoomId = $this->uri->segment(3);
 		$Id =  $this->uri->segment(4);
-		$row = $this->Rooms_model->get_room_thum_by_id($Id);
-		@unlink(FILE_UPLOAD_PATH.'/room/'.$row->url);
+		$url =  $this->uri->segment(5);
+		@unlink(FILE_UPLOAD_PATH.'/room/'.$url);
 		$this->Rooms_model->deleteGalleryById($Id);
 		redirect('rooms/edit_room/'.$RoomId);
 	}
