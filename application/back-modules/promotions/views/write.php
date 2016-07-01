@@ -32,7 +32,7 @@
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <a href="<?php echo base_url('Rooms/list_room_type')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
+            <a href="<?php echo base_url('rooms/list_room_type')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
             <button type="submit" class="btn btn-primary btn-xs pull-right mg-right">Save</button>
 
         </div>

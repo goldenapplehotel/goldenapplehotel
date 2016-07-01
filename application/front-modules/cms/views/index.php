@@ -12,7 +12,7 @@
                 <div class="desc">
                    <?php echo $value->description;?>
                     <div class="price">$<?php echo $value->price;?><span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
+                    <a href="<?php echo BASE_URL.'cms/hotel/view/'.$value->Id.'/'.$lang;?>" class="btn-border">View Details</a>
                 </div>
             </div>
             <img src="<?php echo BASE_URL.'assets/img/room/'.$value->url;?>" alt="">

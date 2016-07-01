@@ -42,7 +42,7 @@ class Promotions extends MX_Controller
 		// var_dump($data);
 		$this->db->insert('tbl_promotions', $data);
 
-		redirect('Promotions/list_promotion');
+		redirect('promotions/list_promotion');
 	}
 
 	public function edit_Promotions(){
@@ -56,7 +56,7 @@ class Promotions extends MX_Controller
 	public function update_Promotions(){
 		$data = func_get_post_array($this->ci->input->post('values')); 
 		$this->db->update('tbl_promotions', $data,array('Id'=>$data['Id']));
-		redirect('Promotions/list_promotion');
+		redirect('promotions/list_promotion');
 	}
 
 }

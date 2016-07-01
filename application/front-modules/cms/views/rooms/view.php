@@ -37,13 +37,24 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="price">
+                            <?php echo ' $'.$value->price;?><span>/night</span>
+                        </div>
+                        <?php 
+                            if($value->pro_title != NULL){
+                                echo '<h4>Protions</h4>';
+                                echo '<p>'.$value->pro_description.'</p>';
+                                echo '<div class="price">';
+                                echo ' $'.$value->pro_percent.'<span>/night</span>';
+                                echo '</div>';
+                            }
+                        ?>
+                        
                         <!-- room close -->
                         <?php }?>
 
 
-                        <div class="price">
-                            $300<span>/night</span>
-                        </div>
+                        
 
                         <a href="#" class="btn-border">Book Now</a>
                     </div>

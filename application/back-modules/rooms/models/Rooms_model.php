@@ -70,7 +70,17 @@ class Rooms_model extends CI_Model {
 		$this->db->delete('tbl_rooms_gallery');
 	}
 
+	public function deleteGallery($type ='',$galleryId=''){
+		if($type !=''){
+			$this->db->select()->from($type);
+			$this->db->where('rooms_id', $Id);
+			$result =$this->db->get()->result();
+			foreach ($result as $key => $value) {
+				@unlink(FILE_UPLOAD_PATH.'/banner/'.$row->url);
+			}
+		}
 
+	}
 
 	
 

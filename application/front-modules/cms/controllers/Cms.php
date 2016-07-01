@@ -8,9 +8,9 @@ class Cms extends MX_Controller {
 	{
 		parent::__construct();
 		$this->ci = &get_instance();
-		if (!$this->session->userdata('is_logged_in')) {
-			redirect('auths');
-		}
+		// if (!$this->session->userdata('is_logged_in')) {
+		// 	redirect('auths');
+		// }
 		$this->load->model('Cms_model');
 		$this->load->model('Mo_Apple');
 	}
@@ -117,8 +117,10 @@ class Cms extends MX_Controller {
 			$where = array('feature' => 'feature' );
 			$data['feature'] = $this->ci->Mo_Apple->getLanguageData('features',$where,$data['lang'])->result();
 			$where = array('description' => 'description', 'title' =>'title', );
+			$param = array('Id'=>$segs[4],'_status' =>1);
 			$data['gallery'] = $this->ci->Mo_Apple->getLanguageData('rooms_gallery',true,$data['lang'],array('rooms_id'=>$segs[4]));
-			$data['rooms'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang'],array('Id'=>$segs[4]));
+			$data['rooms'] = $this->ci->Mo_Apple->getLanguageRoomData('rooms',$where,$data['lang'],$param);
+			// echo $data['rooms'];
 		}else{
 			$data['main_content'] = 'rooms/index';
 			$data['languageUrl'] = BASE_URL.HOTEL_URL;
