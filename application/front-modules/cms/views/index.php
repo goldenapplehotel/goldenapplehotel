@@ -30,25 +30,23 @@
                 </div>
                 <hr>
                 <div class="col-md-6">
-                    <p class="alg-justify">Golden Apple — the first and only Airport Hotel -star boutique hotel. The hotel is small, but it
-certainly has an impeccable style, unique architecture, unique interior design and high quality service.
-Are cost-effective location — in International Airport, a 3-minute walk from the Phnom Penh Airport
-and 25-minute from Downtown, as well as trendy restaurants and clubs, Sky bar. Golden Apple three
-luxurious rooms of seven categories, including one suites. Each of our rooms is decorated in a certain
-color of the rainbow, and in finishing rooms organically using natural materials — wood, marble, slate.
-Author of the project — the Cambodian architect Round the clock access to trained personnel, business
-center will make your stay a comfortable and memorable, and memories of Airport Hotel— very
-pleasant.</p>
+                    <p class="alg-justify">
+                        <?php
+                            foreach ($welcome->result() as $key => $value) {
+                                echo $value->title;
+                            }
+                        ?>
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <h2>Hotel Services</h2>
                     <div class="room-specs">
                         <ul>
-                            <li class="no-border">24 Hours Front Desk</li>
-                            <li class="no-border">Lobby</li>
-                            <li class="no-border">Wireless Internet access ( Wi-Fi)</li>
-                            <li class="no-border">Investment Consultant Services</li>
-                            
+                            <?php
+                                foreach ($hotel->result() as $key => $value) {
+                                    echo '<li class="no-border">'.$value->title.'</li>';
+                                }
+                            ?>
                         </ul>
                     </div>
                 </div>

@@ -24,7 +24,7 @@
                     <option value="<?php echo $value->Id;?>">
                         <?php
 
-                        if($value->ch_name){
+                        if($value->ch_name != ''){
                             echo $value->en_name.' / '. $value->ch_name;
                         }else{
                             echo $value->en_name;
@@ -60,7 +60,7 @@
                         if($value->ch_title){
                             echo $value->en_title.' / '. $value->ch_title;
                         }else{
-                            echo $value->ch_title;
+                            echo $value->en_title;
                         }
 
                         ?>

@@ -33,8 +33,12 @@ class Cms extends MX_Controller {
 		}
 		$where = array('description' => 'description', 'title' =>'title' );
 		$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang'],array('front_status'=>1));
+		$data['welcome'] = $this->ci->Mo_Apple->getLanguageData('welcome',array('title'=>'title'),$data['lang'],array('_status'=>1));
+		$data['hotel'] = $this->ci->Mo_Apple->getLanguageData('hotel_service',array('title'=>'title'),$data['lang'],array('_status'=>1));
+
 		$data['banner'] = 'front-modules/banner';
 		$this->load->view('front-modules/template', $data);
+		// var_dump($data['welcome']->result());
 	}
 	
 	public function gallery(){
@@ -122,29 +126,34 @@ class Cms extends MX_Controller {
 			$data['rooms'] = $this->ci->Mo_Apple->getLanguageRoomData('rooms',$where,$data['lang'],$param);
 			// echo $data['rooms'];
 		}else{
+			if(is_numeric($segs[3])){
+				$param = array('type_id' =>$segs[3]);
+			}else{
+				$param = array();
+			}
 			$data['main_content'] = 'rooms/index';
 			$data['languageUrl'] = BASE_URL.HOTEL_URL;
 			$where = array('description' => 'description', 'title' =>'title', );
-			$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang']);
+			$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang'],$param);
 		}
 		$this->load->view('front-modules/template', $data);
 	}
 
 	public function hotel_room(){
-		$segs = $this->uri->segment_array();
+		// $segs = $this->uri->segment_array();
 		
-		$data['data_banner'] = $this->Cms_model->getBanner();
-		$data['launchpad'] = 'front-modules/launchpad';
-		$data['main_content'] = 'rooms/view';
-		$data['languageUrl'] = BASE_URL.HOTEL_URL;
-		$data['lang'] = 'en';
-		if($segs){
-			$data['lang'] = $this->Cms_model->language_validation($segs);
-		}
-		$where = array('description' => 'description', 'title' =>'title', );
-		$data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang']);
-		$data['banner'] = 'front-modules/blank';
-		$this->load->view('front-modules/template', $data);
+		// $data['data_banner'] = $this->Cms_model->getBanner();
+		// $data['launchpad'] = 'front-modules/launchpad';
+		// $data['main_content'] = 'rooms/view';
+		// $data['languageUrl'] = BASE_URL.HOTEL_URL;
+		// $data['lang'] = 'en';
+		// if($segs){
+		// 	$data['lang'] = $this->Cms_model->language_validation($segs);
+		// }
+		// $where = array('description' => 'description', 'title' =>'title', );
+		// $data['get_room'] = $this->ci->Mo_Apple->getLanguageData('rooms',$where,$data['lang']);
+		// $data['banner'] = 'front-modules/blank';
+		// $this->load->view('front-modules/template', $data);
 	}
 	public function languageChange(){
 		$segs = $this->uri->segment_array();

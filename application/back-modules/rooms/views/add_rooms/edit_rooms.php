@@ -28,7 +28,7 @@
             foreach ($room_type->result() as $key => $value)
             {
                 echo '<option value="'.$value->Id.'">';
-                        if($value->ch_name){
+                        if($value->ch_name !=''){
                            echo $value->en_name.' / '. $value->ch_name;
                         }else{
                             echo $value->en_name;
