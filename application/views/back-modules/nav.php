@@ -55,6 +55,9 @@
                         <li>
                             <a href="<?php echo base_url('rooms/list_room_type');?>">Room Types</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url('rooms/list_hotel_service');?>">Hotel Service</a>
+                        </li>
                         
                     </ul>
                     <!-- /.nav-second-level -->
@@ -73,6 +76,9 @@
                         </li>
                         <li>
                             <a href="<?php echo base_url('contents/news');?>">News</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('contents/welcome');?>">welcome</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

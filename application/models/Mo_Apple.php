@@ -85,5 +85,22 @@ class Mo_apple extends CI_Model  {
 		return $sql;
 		
 	}
+
+	public function getLanguageRoomData($table, $where = TRUE,$lange = 'en',$param=array(),$_status=1){
+		$sql = 'SELECT * ';
+		if(is_array($where)){
+			foreach ($where as $key => $value) {
+				$sql .= ' , '.$lange.'_'.$key.' AS '.$value;
+			}
+		}
+		$sql .= ',(SELECT '.$lange.'_title from tbl_promotions where Id=ads.promotion_id AND _status=1) as pro_title,
+			(SELECT  '.$lange.'_description from tbl_promotions where Id=ads.promotion_id AND _status=1) as pro_description,
+			(SELECT  _percent from tbl_promotions where Id=ads.promotion_id AND _status=1) as pro_percent
+			FROM `tbl_'.$table.'` as ads WHERE Id=? AND _status=?';
+		return $this->db->query($sql,$param);
+			// echo $sql;
+	}
+
+	
 }
 ?>

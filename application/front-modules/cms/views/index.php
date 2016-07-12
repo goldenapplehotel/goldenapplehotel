@@ -12,15 +12,48 @@
                 <div class="desc">
                    <?php echo $value->description;?>
                     <div class="price">$<?php echo $value->price;?><span>/night</span></div>
-                    <a href="single-room.html" class="btn-border">View Details</a>
+                    <a href="<?php echo BASE_URL.'cms/hotel/view/'.$value->Id.'/'.$lang;?>" class="btn-border">View Details</a>
                 </div>
             </div>
             <img src="<?php echo BASE_URL.'assets/img/room/'.$value->url;?>" alt="">
         </div>
         <?php }?>
     </div>
-
     <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h2>Welcome To</h2>
+                    </div>
+                    
+                </div>
+                <hr>
+                <div class="col-md-6">
+                    <p class="alg-justify">
+                        <?php
+                            foreach ($welcome->result() as $key => $value) {
+                                echo $value->title;
+                            }
+                        ?>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Hotel Services</h2>
+                    <div class="room-specs">
+                        <ul>
+                            <?php
+                                foreach ($hotel->result() as $key => $value) {
+                                    echo '<li class="no-border">'.$value->title.'</li>';
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!--  <section>
 
         <div class="container">
             <div class="row">
@@ -66,7 +99,9 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
 
 
 </div>
+
+<style type="text/css"></style>

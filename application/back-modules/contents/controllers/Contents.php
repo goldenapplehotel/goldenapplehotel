@@ -3,15 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Contents extends MX_Controller
 {
-
+	var $ci;
 	public function __construct()
 	{
 		parent::__construct();
+		$this->ci = &get_instance();
 		if (!$this->session->userdata('is_logged_in')) {
 			redirect('auths');
 		}
 		$this->load->model('Contents_model');
-
+		$this->load->model('Mo_Apple');
 	}
 
 	public function index()
@@ -525,5 +526,63 @@ class Contents extends MX_Controller
 	public function delete_contact(){
 
 	}
+
+	public function welcome(){
+		$data['data'] = $this->Contents_model->get_list_content();
+		$data['result']='';
+		$data['main_content'] = 'content/index';
+		$this->load->view('back-modules/template', $data);
+		// var_dump($data['news']);
+	}
+	public function new_content(){
+		$data['data'] = array('en_title' =>'','ch_title'=>'');
+		$data['result']='';
+		$data['main_content'] = 'content/write';
+		$this->load->view('back-modules/template', $data);
+	}
+	public function save_content(){
+		$inData = func_get_post_array($this->ci->input->post('values')); 
+		$idx = $this->ci->Mo_Apple->insert('tbl_welcome',$inData);
+		if($idx){
+			redirect('contents/welcome');
+		}else{
+			$data['data'] = $inData;
+			$data['result']='Please try again..';
+			$data['main_content'] = 'content/write';
+			$this->load->view('back-modules/template', $data);
+		}
+	}
+	public function edit_content(){
+		$Id =  $this->uri->segment(3);
+		$data['data'] = $this->Contents_model->get_list_content_by_Id($Id);
+		$data['result']='';
+		$data['main_content'] = 'content/edit';
+		$this->load->view('back-modules/template', $data);
+	}
+	public function update_content(){
+		$inData = func_get_post_array($this->ci->input->post('values')); 
+		$Id = $this->ci->input->post('Id');
+		$where = array('Id' =>$Id);
+		$idx = $this->ci->Mo_Apple->Update_Data($inData,$where,'tbl_welcome');
+		if($idx){
+			redirect('contents/welcome');
+		}else{
+			$data['data'] = $inData;
+			$data['result']='Please try again..';
+			$data['main_content'] = 'content/eidt';
+			$this->load->view('back-modules/template', $data);
+		}
+	}
+	public function delete_content(){
+		$Id =  $this->uri->segment(3);
+		$idx = $this->ci->Mo_Apple->delete_data('tbl_welcome',$Id);
+		if($idx){
+			$data['result']='suucessfully Deleted';
+		}else{
+			$data['result']='Please try again..';
+		}
+		redirect('contents/welcome');
+	}
+
 
 }

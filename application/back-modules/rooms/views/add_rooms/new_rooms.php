@@ -24,7 +24,7 @@
                     <option value="<?php echo $value->Id;?>">
                         <?php
 
-                        if($value->ch_name){
+                        if($value->ch_name != ''){
                             echo $value->en_name.' / '. $value->ch_name;
                         }else{
                             echo $value->en_name;
@@ -60,7 +60,7 @@
                         if($value->ch_title){
                             echo $value->en_title.' / '. $value->ch_title;
                         }else{
-                            echo $value->ch_title;
+                            echo $value->en_title;
                         }
 
                         ?>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="row mg-top-10">
-            <fieldset>
+            <fieldset class="col-md-12">
                 <div class="col-md-12">
                     <legend>
                         Features
@@ -113,7 +113,7 @@
             </fieldset>
         </div>
         <div class="row mg-top-10">
-            <fieldset>
+            <fieldset class="col-md-12">
                 <div class="col-md-12">
                     <legend>
                         Room Thumbnail

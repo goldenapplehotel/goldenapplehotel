@@ -30,7 +30,7 @@
                         echo '<ul>';
                             foreach ($data->result() as $key => $value1)
                             {
-                                echo '<li><a href="'.BASE_URL.'cms/'.$value->_models.'/'.$value->Id.'/'.$lang.'">'.$value1->name.'</a></li>';
+                                echo '<li><a href="'.BASE_URL.'cms/'.$value->_models.'/'.$value1->Id.'/'.$lang.'">'.$value1->name.'</a></li>';
                             }
                         echo '</ul>';
                     }

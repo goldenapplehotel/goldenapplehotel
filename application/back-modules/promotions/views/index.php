@@ -25,7 +25,7 @@
                 <td><?php echo $key+1;?></td>
                 <td><?php echo $value->en_title;?></td>
                 <td><?php echo $value->ch_title;?></td>
-                <td><?php echo $value->price;?></td>
+                <td><?php echo $value->_percent;?></td>
                 <td><?php echo character_limiter($value->en_description,10);?></td>
                 <td><?php echo character_limiter($value->ch_description,10);?></td>
                 <td align="center">
@@ -39,7 +39,7 @@
 
                 </td>
                 <td>
-                    <a href="<?php echo base_url()?>Promotions/edit_Promotions/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="<?php echo base_url()?>promotions/edit_Promotions/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a href="<?php echo base_url().'rooms/delete_room/'.$value->Id;?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>

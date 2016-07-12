@@ -86,5 +86,18 @@ class Contents_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->row();
 	}
+
+	public function get_list_content(){
+		$this->db->select()->from('tbl_welcome');
+		$this->db->where('_status', 1);
+		$query = $this->db->get();
+		return $query;
+	}
+	public function get_list_content_by_Id($Id){
+		$this->db->select()->from('tbl_welcome');
+		$this->db->where('Id', $Id);
+		$query = $this->db->get();
+		return $query;
+	}
 }
 

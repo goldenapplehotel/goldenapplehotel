@@ -2351,3 +2351,16 @@ control nav
 .fb-comments, .fb-comments iframe[style], .fb-comments span {
     width: 100% !important;
 }
+
+.txt-left{
+    text-align: left;
+}
+.txt-right{
+    text-align: right;
+}
+.no-border{
+    border-bottom: none !important;
+}
+.alg-justify {
+    text-align: justify;
+}
