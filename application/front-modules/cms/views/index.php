@@ -22,14 +22,15 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <div class="col-md-6">
-                        <h2>Welcome To</h2>
+                        
                     </div>
                     
-                </div>
+                </div> -->
                 <hr>
-                <div class="col-md-6">
+                <div class="col-md-12">
+                    <h2>Welcome To</h2>
                     <p class="alg-justify">
                         <?php
                             foreach ($welcome->result() as $key => $value) {
@@ -38,7 +39,7 @@
                         ?>
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h2>Hotel Services</h2>
                     <div class="room-specs">
                         <ul>
@@ -53,54 +54,7 @@
             </div>
         </div>
     </section>
-   <!--  <section>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-bell-o"></i>
-                        <div class="text">
-                            <h3>Room Services</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-coffee"></i>
-                        <div class="text">
-                            <h3>Free Coffee</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-car"></i>
-                        <div class="text">
-                            <h3>Free Parking</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-dropbox"></i>
-                        <div class="text">
-                            <h3>Deposit Box</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section> -->
-
+   
 
 </div>
 
