@@ -24,7 +24,7 @@
             <div class="row">
                 <hr>
                 <div class="col-md-12">
-                    <h2 >Welcome To</h2>
+                    <h2 style="text-align:center;">Welcome To</h2>
                     <p class="alg-justify">
                         <?php
                             foreach ($welcome->result() as $key => $value) {
