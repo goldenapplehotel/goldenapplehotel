@@ -20,10 +20,8 @@
                     <br />
                 </div>
                 <div class="contact_form_holder">
-                    <form name="contactForm" id='contact_form' method="post" action='send.php'>
-
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" />
+                            <input type="text" class="form-control" name="name" id="full_name" placeholder="Your Name" />
                         </div>
 
                         <div class="col-md-6">
@@ -35,13 +33,12 @@
                             <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
                             <div id="mail_failed" class="error">Error, email not sent</div>
 
+                            <div id="alert-box"></div>
                             <p id="btnsubmit">
-                                <input type="submit" id="send" value="Send" class="btn btn-custom" />
+                                <input type="submit" onclick="sendEmail()" id="send" value="Send" class="btn btn-custom"/>
                             </p>
                         </div>
 
-
-                    </form>
                 </div>
 
             </div>
@@ -80,7 +77,7 @@
         var email = $('#email').val();
         var message = $('#message').val();
         var resultData = '';
-        if(full_name == '',phone=='',email=='',message==''){
+        if(full_name == '',email=='',message==''){
             resultData += '<div class="alert alert-warning">';
             resultData += '<strong>Oop!</strong> Please fill your content.';
             resultData += '</div>';

@@ -7,10 +7,9 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="contact_form_holder">
-                    <form name="contactForm" id='booking_form' method="post" action='reservation.php'>
 
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" />
+                            <input type="text" class="form-control" name="name" id="full_name" placeholder="Your Name" />
                         </div>
 
                         <div class="col-md-4">
@@ -41,14 +40,16 @@
 
                         <div class="col-md-4">
                             <select name="room" id="room" class="form-control">
-                                <option>Select Room</option>
-                                <option>Single Room</option>
-                                <option>Double Room</option>
-                                <option>Triple Room</option>
-                                <option>Elegant Room</option>
+
+                                <?php foreach ($room_type->result() as $value){?>
+                                    <option><?php echo $value->name;?></option>
+                                <?php }?>
                             </select>
                         </div>
-
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone number" />
+                            <div id="error_person_num" class="error">Please check again</div>
+                        </div>
 
 
                         <div class="col-md-12">
@@ -59,14 +60,13 @@
 
                             <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
                             <div id="mail_failed" class="error">Error, email not sent</div>
-
+                            <div id="alert-box"></div>
                             <p id="btnsubmit">
-                                <input type="submit" id="send" value="Send" class="btn btn-custom" />
+                                <input type="submit" onclick="booking_room()" id="send" value="Send" class="btn btn-custom" />
                             </p>
                         </div>
 
 
-                    </form>
                 </div>
 
             </div>
@@ -100,4 +100,61 @@
         jQuery('#checkin').datepicker();
         jQuery('#checkout').datepicker();
     });
+</script>
+
+<script>
+
+
+    function booking_room(){
+
+        $('#alert-box').html('');
+
+        var full_name = $('#full_name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var guest = $('#guest').val();
+        var checkin = $('#checkin').val();
+        var checkout = $('#checkout').val();
+        var room_type = $('#room').val();
+        var phone = $('#phone').val();
+
+        var resultData = '';
+        if(full_name == ''||email==''||message==''||guest==''||checkin==''||checkout==''||room_type==''){
+            resultData += '<div class="alert alert-warning">';
+            resultData += '<strong>Oop!</strong> Please fill your information.';
+            resultData += '</div>';
+            $('#alert-box').append(resultData);
+
+            $('#icon-send-mail').show();
+            $('#closet-loading-gif').hide();
+        }else {
+            $.ajax({
+                type: 'post',
+                url: "<?php echo base_url();?>cms/room_booking",
+                data: {
+
+                    full_name: full_name,
+                    email: email,
+                    message: message,
+                    checkin :checkin,
+                    checkout :checkout,
+                    room_type :room_type,
+                    guest:guest,
+                    phone:phone
+                },
+                success: function (results) {
+                    $('#icon-send-mail').show();
+                    $('#closet-loading-gif').hide();
+
+                    resultData += '<div class="alert alert-success">';
+                    resultData += '<strong>Success! You has booking room successfully.</strong>.';
+                    resultData += '</div>';
+
+                    $('#alert-box').append(resultData);
+                }
+            });
+        }
+    }
+
+
 </script>

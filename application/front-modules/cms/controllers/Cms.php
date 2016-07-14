@@ -73,6 +73,7 @@ class Cms extends MX_Controller {
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
 		}
+		$data['room_type']=$this->ci->Mo_Apple->getLanguageData('rooms_type',array('name'=>'name'),$data['lang'],array('_status'=>1));
 		$data['banner'] = 'front-modules/blank';
 		$data['main_content'] = 'booking';
 		$this->load->view('front-modules/template', $data);
@@ -179,6 +180,36 @@ class Cms extends MX_Controller {
 		$this->email->to(INFO_EMAIL);
 		$this->email->subject('Customer Contact');
 		$msg = $this->load->view('send-mail/index',$data,TRUE);
+		$this->email->message($msg);
+		$this->email->send();
+		echo $this->email->print_debugger();
+
+	}
+
+	public function room_booking(){
+
+		$full_name  = $this->input->post('full_name');
+		$email      = $this->input->post('email');
+		$message    = $this->input->post('message');
+		$checkIn    = $this->input->post('checkin');
+		$checkOut    = $this->input->post('checkout');
+		$roomType    = $this->input->post('room_type');
+		$people_number    = $this->input->post('guest');
+		$phone    = $this->input->post('phone');
+		
+		$data['message']= $message;
+		$data['email_from'] = $email;
+		$data['checkin'] = $checkIn;
+		$data['checkout'] = $checkOut;
+		$data['room_type'] = $roomType;
+		$data['guest'] = $people_number;
+		$data['phone'] = $phone;
+		
+		$this->email->set_mailtype("html");
+		$this->email->from($email, $full_name);
+		$this->email->to(INFO_EMAIL);
+		$this->email->subject('Customer Contact');
+		$msg = $this->load->view('send-mail/booking',$data,TRUE);
 		$this->email->message($msg);
 		$this->email->send();
 		echo $this->email->print_debugger();

@@ -40,5 +40,10 @@ class Cms_model extends CI_Model {
 		return $result;
 	}
 
+	public function get_room_type(){
+		$this->db->select()->from('tbl_rooms_type');
+		return $this->db->get();
+	}
+
 }
 
