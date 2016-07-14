@@ -95,3 +95,9 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(document).ready(function () {
+        jQuery('#checkin').datepicker();
+        jQuery('#checkout').datepicker();
+    });
+</script>
