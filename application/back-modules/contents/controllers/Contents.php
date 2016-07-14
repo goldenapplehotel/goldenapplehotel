@@ -455,8 +455,8 @@ class Contents extends MX_Controller
 			$userArray = array(
 				'en_title' 	            =>$this->input->post('en_title'),
 				'ch_title' 	            =>$this->input->post('ch_title'),
-				'en_des' 	    =>$this->input->post('en_des'),
-				'ch_des' 	    =>$this->input->post('ch_des'),
+				'en_des' 	    		=>$this->input->post('en_des'),
+				'ch_des' 	    		=>$this->input->post('ch_des'),
 				'date_news'             =>date('y/m/d'),
 				'img'                   =>$this->upload->file_name,
 				'_status'			    =>$status
@@ -511,21 +511,7 @@ class Contents extends MX_Controller
 		redirect('contents/news');
 
 	}
-	public function dalete_explore(){
 
-	}
-
-	public function save_contact(){
-
-	}
-
-	public function update_contact(){
-
-	}
-
-	public function delete_contact(){
-
-	}
 
 	public function welcome(){
 		$data['data'] = $this->Contents_model->get_list_content();
@@ -584,5 +570,42 @@ class Contents extends MX_Controller
 		redirect('contents/welcome');
 	}
 
+	public function delete_banner(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_banner',$Id);
+		redirect('contents/banner');
+	}
+	public function delete_explore(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_explores',$Id);
+		redirect('contents/explores');
+	}
 
+	public function delete_news(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_news',$Id);
+		redirect('contents/news');
+	}
+
+	public function delete_main_gallery(){
+		$Id = $this->uri->segment(3);
+		$where = array('Id' =>$Id);
+		$this->Contents_model->delete_sub_garllery_by_type_id($Id);
+		$this->ci->Mo_Apple->delete_data('tbl_main_gallery',$Id);
+		redirect('contents/main_gallery');
+	}
+
+	public function delete_sub_gallery(){
+		$Id = $this->uri->segment(3);
+		$row = $this->Contents_model->get_sub_gallery_by_id($Id);
+		@unlink(FILE_UPLOAD_PATH.'/gallery/'.$row->url);
+		$where = array('Id' =>$Id);
+		$this->ci->Mo_Apple->delete_data('tbl_gallerys',$Id);
+		redirect('contents/sub_gallery/'.$this->uri->segment(4));
+	}
+
+	
 }

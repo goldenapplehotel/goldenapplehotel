@@ -164,4 +164,24 @@ class Cms extends MX_Controller {
 		        echo '<br />';
 		}
 	}
+
+	public function sendEmail(){
+
+		$full_name  = $this->input->post('full_name');
+		$email      = $this->input->post('email');
+		$message    = $this->input->post('message');
+
+		$data['message']= $message;
+		$data['email_from'] = $email;
+
+		$this->email->set_mailtype("html");
+		$this->email->from($email, $full_name);
+		$this->email->to(INFO_EMAIL);
+		$this->email->subject('Customer Contact');
+		$msg = $this->load->view('send-mail/index',$data,TRUE);
+		$this->email->message($msg);
+		$this->email->send();
+		echo $this->email->print_debugger();
+
+	}
 }

@@ -36,26 +36,28 @@
             <div class="col-md-4">
                 <h3>Our Address</h3>
                 <address>
-                    <span>20 Main Street, Melbourne</span>
-                    <span><strong>Phone:</strong>(200) 333 8890</span>
-                    <span><strong>Fax:</strong>(200) 333 8892</span>
-                    <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                    <span><strong>Web:</strong><a href="#test">http://example.com</a></span>
+                    <span>
+                        No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia.
+                        Phnom Penh
+                    </span>
+                    <span><strong>Phone:</strong>+85511 609 998</span>
+                    <span><strong>Email:</strong>info@goldenapplehotelpp.com</a></span>
+                    <span><strong>Web:</strong><a href="goldenapplehotelpp.com">www.goldenapplehotelpp.com</a></span>
                 </address>
 
                 <div class="social-icons">
-                    <a href="#">
+                    <a href="https://www.facebook.com/Goldenapplehotelairport.com.kh/">
                         <img src="<?php echo BASE_URL;?>assets/img/icons/facebook.png" alt=""></a>
                     <a href="#">
                         <img src="<?php echo BASE_URL;?>assets/img/icons/twitter.png" alt=""></a>
-                    <a href="#">
-                        <img src="<?php echo BASE_URL;?>assets/img/icons/dribbble.png" alt=""></a>
-                    <a href="#">
-                        <img src="<?php echo BASE_URL;?>assets/img/icons/blogger.png" alt=""></a>
-                    <a href="#">
-                        <img src="<?php echo BASE_URL;?>assets/img/icons/youtube.png" alt=""></a>
-                    <a href="#">
-                        <img src="<?php echo BASE_URL;?>assets/img/icons/vimeo.png" alt=""></a>
+<!--                    <a href="#">-->
+<!--                        <img src="--><?php //echo BASE_URL;?><!--assets/img/icons/dribbble.png" alt=""></a>-->
+<!--                    <a href="#">-->
+<!--                        <img src="--><?php //echo BASE_URL;?><!--assets/img/icons/blogger.png" alt=""></a>-->
+<!--                    <a href="#">-->
+<!--                        <img src="--><?php //echo BASE_URL;?><!--assets/img/icons/youtube.png" alt=""></a>-->
+<!--                    <a href="#">-->
+<!--                        <img src="--><?php //echo BASE_URL;?><!--assets/img/icons/vimeo.png" alt=""></a>-->
                 </div>
 
                 <h3>Language</h3>
@@ -80,11 +82,10 @@
                 <div class="col-md-6">
                     <nav>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Booking</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="<?php echo BASE_URL;HOME?>">Home</a></li>
+                            <li><a href="<?php echo BASE_URL;?>cms/booking">Booking</a></li>
+                            <li><a href="<?php echo BASE_URL;?>cms/news">News</a></li>
+                            <li><a href="<?php echo BASE_URL;?>cms/contact">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>

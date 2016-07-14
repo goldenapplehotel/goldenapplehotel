@@ -80,12 +80,12 @@
                     </div>
 
                     <address>
-                        <h4>Corsiva South Beach</h4>
-                        <span>20 Main Street, Melbourne</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
+                        <h4>Golden Apple Hotel Phnom Penh</h4>
+                        <span>No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia. Phnom Penh</span>
+                        <span><strong>Phone:</strong>+85511 609 998</span>
                         <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                        <span><strong>Web:</strong><a href="#test">http://example.com</a></span>
+                        <span><strong>Email:</strong>info@goldenapplehotelpp.com</span>
+                        <span><strong>Web:</strong><a href="www.goldenapplehotelpp.com">www.goldenapplehotelpp.com</a></span>
                     </address>
 
 

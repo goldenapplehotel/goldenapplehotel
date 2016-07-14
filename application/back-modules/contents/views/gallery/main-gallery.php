@@ -37,7 +37,7 @@
             <td>
                 <a href="<?php echo base_url()?>contents/sub_gallery/<?php echo $value->Id?>" class="btn btn-primary btn-xs">sub gallery</i></a>
                 <a href="<?php echo base_url()?>contents/edit_main_gallery/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <a href="<?php echo base_url()?>contents/delete_main_gallery/<?php echo $value->Id?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
         </tr>
 

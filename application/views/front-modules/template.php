@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>GAHPP</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE, NO-STORE, must-revalidate">
     <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="EXPIRES" CONTENT=0>
-    
+    <link rel="shortcut icon" href="<?php echo BASE_URL;?>assets/img/icons/goldenapple.ico">
 
     <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/main.css">
     <link  rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/font-awesome.css">
@@ -27,7 +27,7 @@
     <script src="<?php echo BASE_URL;?>assets/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo BASE_URL;?>assets/js/owl.carousel.min.js"></script>
     <script src="<?php echo BASE_URL;?>assets/js/custom.js"></script>
-    
+
 </head>
 
 <body>

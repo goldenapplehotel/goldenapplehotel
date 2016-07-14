@@ -37,6 +37,8 @@ define('NEW_BAKERY_URL','mypage/new_bakery');
 define('ALLOWED_TYPES','gif|jpg|png|jpeg');
 define('FILE_UPLOAD_PATH', '../assets/img');
 define('FILE_UPLOAD_MAX_SIZE', '100000000');//No Limit
+
+define('INFO_EMAIL', 'sun.angkorwat@gmail.com');//No Limit
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

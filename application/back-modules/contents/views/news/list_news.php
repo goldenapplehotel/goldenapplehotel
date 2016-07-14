@@ -44,7 +44,7 @@
             </td>
             <td>
                 <a href="<?php echo base_url()?>contents/edit_news/<?php echo $value->Id?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <a href="<?php echo base_url()?>contents/delete_news/<?php echo $value->Id?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
         </tr>
 

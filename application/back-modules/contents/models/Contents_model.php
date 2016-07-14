@@ -99,5 +99,9 @@ class Contents_model extends CI_Model {
 		$query = $this->db->get();
 		return $query;
 	}
+	public function delete_sub_garllery_by_type_id($id){
+		$this -> db -> where('type', $id);
+		$this -> db -> delete('tbl_gallerys');
+	}
 }
 

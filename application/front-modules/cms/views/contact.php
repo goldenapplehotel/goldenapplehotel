@@ -51,29 +51,13 @@
 
                 <div class="widget widget-text">
                     <address>
-                        <h4>Corsiva South Beach</h4>
-                        <span>10 Main Street, South Beach</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
+                        <h4>Golden Apple Hotel Phnom Penh</h4>
+                        <span>No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia. Phnom Penh</span>
+                        <span><strong>Phone:</strong>+85511 609 998</span>
                         <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
+                        <span><strong>Email:</strong>info@goldenapplehotelpp.com</span>
+                        <span><strong>Web:</strong><a href="www.goldenapplehotelpp.com">www.goldenapplehotelpp.com</a></span>
                     </address>
-                    <div class="small-border"></div>
-                    <address>
-                        <h4>Corsiva Los Angles</h4>
-                        <span>15 Main Street, Los Angles</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                    </address>
-                    <div class="small-border"></div>
-                    <address>
-                        <h4>Corsiva New York</h4>
-                        <span>20 Main Street, New York</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                    </address>
-
 
                 </div>
 
@@ -83,3 +67,50 @@
 </div>
 </div>
 <!-- content close -->
+
+
+<script>
+
+
+    function sendEmail(){
+        $('#icon-send-mail').hide();
+        $('#closet-loading-gif').show();
+        $('#alert-box').html('');
+        var full_name = $('#full_name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var resultData = '';
+        if(full_name == '',phone=='',email=='',message==''){
+            resultData += '<div class="alert alert-warning">';
+            resultData += '<strong>Oop!</strong> Please fill your content.';
+            resultData += '</div>';
+            $('#alert-box').append(resultData);
+
+            $('#icon-send-mail').show();
+            $('#closet-loading-gif').hide();
+        }else {
+            $.ajax({
+                type: 'post',
+                url: "<?php echo base_url();?>cms/sendEmail",
+                data: {
+
+                    full_name: full_name,
+                    email: email,
+                    message: message
+                },
+                success: function (results) {
+                    $('#icon-send-mail').show();
+                    $('#closet-loading-gif').hide();
+
+                    resultData += '<div class="alert alert-success">';
+                    resultData += '<strong>Success! Your email has been sent successfully.</strong>.';
+                    resultData += '</div>';
+
+                    $('#alert-box').append(resultData);
+                }
+            });
+        }
+    }
+
+
+</script>

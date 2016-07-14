@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>GAHPP</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="shortcut icon" href="<?php echo BASE_URL;?>assets/img/icons/goldenapple.ico">
+    
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/admin-bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/metisMenu.min.js"></script>

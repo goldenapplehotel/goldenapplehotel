@@ -72,9 +72,6 @@
                             <a href="<?php echo base_url('contents/explores');?>">Explores</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('contents/banner');?>">Contacts</a>
-                        </li>
-                        <li>
                             <a href="<?php echo base_url('contents/news');?>">News</a>
                         </li>
                         <li>
