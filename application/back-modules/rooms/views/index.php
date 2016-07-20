@@ -1,6 +1,14 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('rooms/new_room')?>" type="button" class="btn btn-primary btn-xs">New</a>
+    <?php 
+        $row = $room_type->num_rows();
+        if($row >0){
+            echo '<a href="'.base_url('rooms/new_room').'" type="button" class="btn btn-primary btn-xs">New</a>';
+        }else{
+            echo '<a href="'.base_url('rooms/new_room_type').'" type="button" class="btn btn-primary btn-xs">please set up room type before set up Room</a>';
+        }
+    ?>
+    
 </div>
     <table class="table table-bordered">
         <thead>

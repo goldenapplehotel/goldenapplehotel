@@ -12,11 +12,11 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>N</th>
-        <th>En Title</th>
-        <th>Ch Title</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th width="5%">N</th>
+        <th width="30%">En Title</th>
+        <th width="30%"> Ch Title</th>
+        <th width="15%">Status</th>
+        <th width="15%">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
         <tr>
             <td><?php echo $n;?></td>
             <td><?php echo character_limiter($value->en_title,50);?></td>
-            <td><?php echo character_limiter($value->ch_title,50);?></td>
+            <td><?php echo character_limiter($value->ch_title,20);?></td>
             <td>
                 <?php if($value->_status ==1){
 

@@ -19,6 +19,7 @@ class Rooms extends MX_Controller
 	{
 		
 		$data['data']	= $this->Rooms_model->getAllRooms();
+		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
 		$data['main_content'] = 'index';
 		$this->load->view('back-modules/template', $data);
 		// $data['main_content'] = 'banner/banner';
@@ -28,6 +29,7 @@ class Rooms extends MX_Controller
 
 	public function list_room(){
 		$data['data']	= $this->Rooms_model->getAllRooms();
+		$data['room_type'] =   $this->Rooms_model->getAllRoomType();
 		$data['main_content'] = 'index';
 		$this->load->view('back-modules/template', $data);
 	}
@@ -170,7 +172,7 @@ class Rooms extends MX_Controller
 		}
 		
         // exit;
-		redirect('rooms');
+		redirect('rooms/list_room');
 		
 	}
 

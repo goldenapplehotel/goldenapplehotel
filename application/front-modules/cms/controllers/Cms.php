@@ -167,22 +167,27 @@ class Cms extends MX_Controller {
 	}
 
 	public function sendEmail(){
-
 		$full_name  = $this->input->post('full_name');
-		$email      = $this->input->post('email');
+		$sender_email      = $this->input->post('email');
 		$message    = $this->input->post('message');
 
-		$data['message']= $message;
-		$data['email_from'] = $email;
-
-		$this->email->set_mailtype("html");
-		$this->email->from($email, $full_name);
+		$this->email->from($sender_email, $full_name);
 		$this->email->to(INFO_EMAIL);
 		$this->email->subject('Customer Contact');
+
+		$data['message']= $message;
+		$data['email_from']=$sender_email;
+
 		$msg = $this->load->view('send-mail/index',$data,TRUE);
 		$this->email->message($msg);
-		$this->email->send();
-		echo $this->email->print_debugger();
+
+
+        if ($this->email->send()) {
+		$data['message_display'] = 'Email Successfully Send !';
+		} else {
+		$data['message_display'] =  '<p class="error_msg">Invalid Gmail Account or Password !</p>';
+		}
+		var_dump($data);
 
 	}
 

@@ -23,7 +23,7 @@
                 <td><?php echo $value->en_name;?></td>
                 <td><?php echo $value->ch_name;?></td>
                 <td>
-                    <?php if($value->_status ==0){
+                    <?php if($value->_status ==1){
 
                         echo '<i class="fa fa-check" aria-hidden="true"></i>';
                     }else{

@@ -74,6 +74,7 @@ jQuery(document).ready(function() {
             itemSelector: '.item',
             filter: '*',
         });
+
         jQuery('#filters a').click(function() {
             var $this = jQuery(this);
             if ($this.hasClass('selected')) {
@@ -90,11 +91,41 @@ jQuery(document).ready(function() {
             return false;
         });
 
-    })
-
-
-
-
+        jQuery('#btbooking').click(function() {
+            var defaults = {
+                text: 'To Top',
+                min: 200,
+                inDelay:600,
+                outDelay:400,
+                containerID: 'toTop',
+                containerHoverID: 'toTopHover',
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            var settings = $.extend(defaults);
+            var dewidth = $(window).width();
+            var deLeft= dewidth;
+            if(dewidth >980){
+                dewidth = '50%';
+                deLeft= '10%' ;
+            }else{
+                dewidth = '90%';
+                deLeft = '5%';
+            }
+            
+            $('.top-booking').css({
+                'position': 'absolute',
+                'top': $(window).scrollTop() + 120 ,
+                'width' : dewidth,
+                'left': deLeft,
+                'display': 'none',
+                'z-index':998,
+            }).fadeIn(settings.inDelay);
+        });
+        
+    });
+    
+    
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // paralax background
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -184,6 +215,21 @@ jQuery(document).ready(function() {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     window.onresize = function(event) {
         jQuery('#gallery').isotope('reLayout');
+        var dewidth = $(window).width();
+        var deLeft= dewidth;
+        if(dewidth >980){
+                dewidth = '50%';
+                deLeft= '10%';;
+            }else{
+                dewidth = '50%';
+                deLeft = '10%';
+            }
+        console.log($(window).scrollTop() +'-'+$(window).height() +'-'+dewidth);
+        jQuery("body").find("#tbooking").css({
+                    'top': $(window).scrollTop() + 120 ,
+                    'width' : dewidth,
+                    'left': deLeft,
+                });
     };
 
 
@@ -269,6 +315,7 @@ jQuery(document).ready(function() {
         var fromTop = jQuery(window).scrollTop();
         console.log(fromTop);
         jQuery("body").toggleClass("down", (fromTop > 240));
+        jQuery("body").find("#tbooking").css({'top': $(window).scrollTop() + 120});
     });
 
 
@@ -349,3 +396,4 @@ jQuery(document).ready(function() {
     });
 
 });
+
