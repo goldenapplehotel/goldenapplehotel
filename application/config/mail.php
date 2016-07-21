@@ -20,7 +20,8 @@ $config['newline']    = "\r\n";
 
 $config['mailtype'] = 'html'; // or html
 
-$config['validation'] = TRUE; // bool whether to validate email or not      
+$config['validation'] = TRUE; // bool whether to validate email or not   
+   
 
 // $this->email->initialize($config);
 ?>
