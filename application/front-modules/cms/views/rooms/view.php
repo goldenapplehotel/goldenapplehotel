@@ -28,9 +28,7 @@
                         <!-- room begin -->
                            
                             <div class="text">
-                            <h3><?php echo $value->title;?></h3>
                             <h4>Overview</h4>
-
                             <p><?php echo $value->description;?></p>
                             <div class="room-specs">
                                 <h4>Features</h4>
@@ -67,7 +65,6 @@
     <div class="col-md-12" style="padding-left:0px;">
         <div class="col-md-6 mg-bottom-10">
             <input type="text" class="form-control" name="name" id="full_name" placeholder="Your Name" />
-            <input type="hidden" name="title" id="title" value="<?php echo $value->title;?>">
         </div>
 
         <div class="col-md-6 mg-bottom-10">
@@ -130,57 +127,5 @@
         $( "#"+id ).fadeOut(600,function(){
             
         })
-    }
-</script>
-<script>
-    function booking_room(){
-
-        $('#alert-box').html('');
-
-        var full_name = $('#full_name').val();
-        var email = $('#email').val();
-        var message = $('#message').val();
-        var guest = $('#guest').val();
-        var checkin = $('#checkin').val();
-        var checkout = $('#checkout').val();
-        var room_type = $('#title').val();
-        var phone = $('#phone').val();
-
-        var resultData = '';
-        if(full_name == ''||email==''||message==''||guest==''||checkin==''||checkout==''||room_type==''){
-            resultData += '<div class="alert alert-warning">';
-            resultData += '<strong>Oop!</strong> Please fill your information.';
-            resultData += '</div>';
-            $('#alert-box').append(resultData);
-
-            $('#icon-send-mail').show();
-            $('#closet-loading-gif').hide();
-        }else {
-            $.ajax({
-                type: 'post',
-                url: "<?php echo base_url();?>cms/room_booking",
-                data: {
-
-                    full_name: full_name,
-                    email: email,
-                    message: message,
-                    checkin :checkin,
-                    checkout :checkout,
-                    room_type :room_type,
-                    guest:guest,
-                    phone:phone
-                },
-                success: function (results) {
-                    $('#icon-send-mail').show();
-                    $('#closet-loading-gif').hide();
-
-                    resultData += '<div class="alert alert-success">';
-                    resultData += '<strong>Success! You has booking room successfully.</strong>.';
-                    resultData += '</div>';
-
-                    $('#alert-box').append(resultData);
-                }
-            });
-        }
     }
 </script>

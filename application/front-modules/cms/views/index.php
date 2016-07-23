@@ -23,9 +23,9 @@
         <div class="container">
             <div class="row">
                 <hr>
-                <div class="col-md-12">
-                    <h2 style="text-align:center;">Welcome To</h2>
-                    <p class="alg-justify">
+                <div class="col-md-12 pd-right-10-media">
+                    <h2 class="txt-align-center">Welcome To</h2>
+                    <p class="alg-justify pd-right-10">
                         <?php
                             foreach ($welcome->result() as $key => $value) {
                                 echo $value->title;
@@ -33,8 +33,8 @@
                         ?>
                     </p>
                 </div>
-                <div class="col-md-12">
-                    <h2>Hotel Services</h2>
+                <div class="col-md-12 pd-right-10-media">
+                    <h2 class="txt-align-center">Hotel Services</h2>
                     <div class="room-specs">
                         <ul>
                             <?php

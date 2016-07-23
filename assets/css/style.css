@@ -2322,12 +2322,19 @@ control nav
     #gallery .item{
         width:49.5%;
     }
+    .pd-right-10-media{
+        padding-right: 20px !important;
+    }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     #gallery .item{
         width:49.5%;
     }
+    #pd-right-10-media{
+        padding-right: 0px;
+    }
+    
 }
 
 @media only screen and (max-width: 480px) {
@@ -2340,6 +2347,10 @@ control nav
         font-size:16px;
         padding:15px;
     }
+    #pd-right-10-media{
+        padding-right: 0px;
+    }
+    
 }
 
 /* close media query */
@@ -2380,4 +2391,13 @@ control nav
 
 .mg-bottom-10{
     margin-bottom: 10px;
+}
+.pd-right-10-media{
+    padding-right: 0px;
+}
+.pd-left-10{
+    padding-left: 10px;
+}
+.txt-align-center{
+    text-align:center;
 }
