@@ -76,14 +76,15 @@
                 <div class="widget widget-text">
                     <h3>Our Address</h3>
                     <div class="map-small">
-                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.id/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=16+Riverside+Rd,+Singapore&amp;sll=-2.547988,118.037109&amp;sspn=29.394918,50.756836&amp;ie=UTF8&amp;geocode=Fb8IFgAdu40vBg&amp;split=0&amp;hq=&amp;hnear=16+Riverside+Rd,+Singapore&amp;ll=1.444031,103.779771&amp;spn=0.014522,0.024784&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=false"></iframe>
+                        <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=11%C2%B032'44.3%22N%20104%C2%B050'12.8%22E&key=AIzaSyAamVMPmk0OPeO3AsC_RHuOv_sSNFUnFVo" allowfullscreen></iframe>
                     </div>
 
                     <address>
                         <h4>Golden Apple Hotel Phnom Penh</h4>
                         <span>No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia. Phnom Penh</span>
-                        <span><strong>Phone:</strong>+85511 609 998</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
+                        <span><strong>Phone:</strong>+85585 288 188</span>
+                        <span><strong></strong>+85590 288 188</span>
+                        <span><strong></strong>+85510 288 188</span>
                         <span><strong>Email:</strong>info@goldenapplehotelpp.com</span>
                         <span><strong>Web:</strong><a href="www.goldenapplehotelpp.com">www.goldenapplehotelpp.com</a></span>
                     </address>

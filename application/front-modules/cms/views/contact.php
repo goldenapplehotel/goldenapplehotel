@@ -52,8 +52,9 @@
                     <address>
                         <h4>Golden Apple Hotel Phnom Penh</h4>
                         <span>No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia. Phnom Penh</span>
-                        <span><strong>Phone:</strong>+85511 609 998</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
+                        <span><strong>Phone:</strong>+85585 288 188</span>
+                        <span><strong></strong>+85590 288 188</span>
+                        <span><strong></strong>+85510 288 188</span>
                         <span><strong>Email:</strong>info@goldenapplehotelpp.com</span>
                         <span><strong>Web:</strong><a href="www.goldenapplehotelpp.com">www.goldenapplehotelpp.com</a></span>
                     </address>
