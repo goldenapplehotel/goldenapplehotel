@@ -20,15 +20,20 @@
                             </div>
                         </div>
                         <div class="preview">
-                            <img src="<?php echo BASE_URL;?>assets/img/room/room1.jpg" alt="">
-                            <a href="#">
-                                <h3 class="blog-title">Chandelier That Turns Your Room into a Forest</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur.</p>
+                            <?php foreach ($news->result() as $key=>$value){?>
+                                <?php if($key==0){?>
+                                    <img src="<?php echo base_url();?>assets/img/news/<?php echo $value->img;?>" alt="">
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                            <h3 class="blog-title">  <?php echo $value->title;?></h3>
+                            <p><?php echo $value->des;?></p>
+                                <?php }?>
+                            <?php }?>
                         </div>
-                        <div class="meta-info">By: <a href="#">Admin</a><span>|</span><a href="#">Event</a>, <a href="#">Promotion</a><span>|</span><a href="#">2 Comments</a><span>|</span> </div>
+                        <div class="meta-info">By: <a href="#">Admin</a> </div>
+
+
+
                     </div>
                 </div>
 
@@ -91,11 +96,12 @@
 
 
                     <address>
-                        <span>20 Main Street, Melbourne</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                        <span><strong>Web:</strong><a href="#test">http://example.com</a></span>
+                        <span>No. 596, Road No. 4, Confederation de la Russie (110), Porsenchey, Choumchao, Phnom Penh, Cambodia. Phnom Penh</span>
+                        <span><strong>Phone:</strong>+85585 288 188</span>
+                        <span><strong></strong>+85590 288 188</span>
+                        <span><strong></strong>+85510 288 188</span>
+                        <span><strong>Email:</strong><a href="in@goldenapplehotelpp.com">in@goldenapplehotelpp.com</a></span>
+                        <span><strong>Web:</strong><a href="http://goldenapplehotelpp.com/">http://goldenapplehotelpp.com/</a></span>
                     </address>
 
                 </div>

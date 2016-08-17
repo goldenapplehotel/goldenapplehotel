@@ -38,7 +38,7 @@ define('ALLOWED_TYPES','gif|jpg|png|jpeg');
 define('FILE_UPLOAD_PATH', '../assets/img');
 define('FILE_UPLOAD_MAX_SIZE', '100000000');//No Limit
 
-define('INFO_EMAIL', 'sun.angkorwat@gmail.com');//No Limit
+define('INFO_EMAIL', 'info@goldenapplehotelpp.com');//No Limit
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
