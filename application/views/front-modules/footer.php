@@ -3,31 +3,41 @@
         <div class="row">
             <div class="col-md-4">
                 <h3>About Us</h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Golden Apple — the first and only Airport Hotel -star boutique hotel. The hotel is small, but it certainly has an impeccable style, unique architecture, unique interior design and high quality service. Are cost-effective location — in International Airport, a 3-minute walk from the Phnom Penh Airport and 25-minute from Downtown, as well as trendy restaurants and clubs, Sky bar. Golden Apple three luxurious rooms of seven categories, including one suites. Each of our rooms is decorated in a certain color of the rainbow, and in finishing rooms organically using natural materials — wood, marble, slate. Author of the project — the Cambodian architect Round the clock access to trained personnel, business center will make your stay a comfortable and memorable, and memories of Airport Hotel— very pleasant
             </div>
             <div class="col-md-4">
-                <h3>Latest News</h3>
-                <ul class="bloglist-small">
+                <h3>Contact info</h3>
+                <ul class="bloglist-small pull-left">
                     <li>
                         <div class="date-box">
-                            <span class="day">28</span>
-                            <span class="month">SEP</span>
+                            <span class="day"><i class="fa fa-user"></i> </span>
+
                         </div>
                         <div class="txt">
-                            <h5><a href="css/#">Lorem ipsum sit amet</a></h5>
+                            <h5><a href="css/#">CEO</a></h5>
                             <div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
+                                <div>Mr. Example</div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="date-box">
-                            <span class="day">26</span>
-                            <span class="month">SEP</span>
+                            <span class="day"><i class="fa fa-user"></i> </span>
+
                         </div>
                         <div class="txt">
-                            <h5><a href="css/#">Lorem ipsum sit amet</a></h5>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            <h5><a href="css/#">General Manager</a></h5>
+                            Mr. Example
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date-box">
+                            <span class="day"><i class="fa fa-user"></i> </span>
+
+                        </div>
+                        <div class="txt">
+                            <h5><a href="css/#">Reciptiones</a></h5>
+                            Mr. Example
                         </div>
                     </li>
                 </ul>
@@ -80,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    &copy; Copyright 2015 - goldenapplehotel
+                    &copy; Copyright 2015 - goldenapplehotelphnompenh
                 </div>
                 <div class="col-md-6">
                     <nav>
