@@ -130,7 +130,7 @@
         }else {
             $.ajax({
                 type: 'post',
-                url: "<?php echo base_url();?>cms/room_booking",
+                url: "<?php echo base_url();?>cms/sendEmail",
                 data: {
 
                     full_name: full_name,
@@ -143,6 +143,7 @@
                     phone:phone
                 },
                 success: function (results) {
+                console.log(results);
                     $('#icon-send-mail').show();
                     $('#closet-loading-gif').hide();
 

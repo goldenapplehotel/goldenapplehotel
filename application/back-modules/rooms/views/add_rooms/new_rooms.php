@@ -14,7 +14,7 @@
     <div class="row mg-top-10">
         <div class="col-md-2">Price</div>
         <div class="col-md-4"><input type="text" class="form-control" name="values[price]"></div>
-        <div class="col-md-2">Room Type</div>
+        <div class="col-md-2">Room Type </div>
         <div class="col-md-4">
             <select class="form-control" name="values[type_id]">
                 <?php
@@ -143,8 +143,8 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="<?php echo base_url('rooms/list_room')?>" type="button" class="btn btn-default btn-xs pull-right">Cancel</a>
+                
                 <button type="submit" class="btn btn-primary btn-xs pull-right mg-right">Save</button>
-
             </div>
         </div>
     </div>

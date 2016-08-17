@@ -128,3 +128,6 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array('mo_apple');
+
+
+$autoload['mail']= array('mail');

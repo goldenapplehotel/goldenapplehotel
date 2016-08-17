@@ -1,7 +1,7 @@
 
 <div class="well well-sm">
-    <a href="<?php echo base_url('tools/new_nav')?>" type="button" class="btn btn-primary btn-xs">New</a>
-    <div id="chk" class="btn btn-primary btn-xs navbar-right"></div>
+    <!-- <a href="<?php echo base_url('tools/new_nav')?>" type="button" class="btn btn-primary btn-xs"></a> -->
+    <a href=""  type="button" class="btn btn-primary btn-xs"><div id="chk" class="btn btn-primary btn-xs navbar-right"></div></a>
 </div>
     <table class="table table-bordered">
         <thead>

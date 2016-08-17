@@ -68,6 +68,8 @@ switch (ENVIRONMENT)
 	case 'development':
 		error_reporting(-1);
 		ini_set('display_errors', 1);
+		if ( function_exists( 'date_default_timezone_set' ) )
+		date_default_timezone_set("Asia/Phnom_Penh");
 	break;
 
 	case 'testing':

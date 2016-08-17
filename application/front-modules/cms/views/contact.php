@@ -96,6 +96,7 @@
                     message: message
                 },
                 success: function (results) {
+                    console.log(results);
                     $('#icon-send-mail').show();
                     $('#closet-loading-gif').hide();
 

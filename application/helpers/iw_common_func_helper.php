@@ -11,6 +11,7 @@ if (!defined('BASEPATH'))
 
 function func_get_post_array_checkbox($post_arr){
 	$country_values= "";
+	if(is_array($post_arr)){
 		foreach ($post_arr as $selected){
 			if($country_values != ""){
 				$country_values .= "^".$selected;	
@@ -18,6 +19,8 @@ function func_get_post_array_checkbox($post_arr){
 				$country_values = $selected;
 			}
 		}
+	}
+		
 	return $country_values;
 }
 

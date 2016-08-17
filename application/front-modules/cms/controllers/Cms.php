@@ -13,6 +13,7 @@ class Cms extends MX_Controller {
 		// }
 		$this->load->model('Cms_model');
 		$this->load->model('Mo_Apple');
+		//$this->load->library('email');
 	}
 
 	public function error_404(){
@@ -169,22 +170,55 @@ class Cms extends MX_Controller {
 	}
 
 	public function sendEmail(){
-
 		$full_name  = $this->input->post('full_name');
-		$email      = $this->input->post('email');
+		$sender_email      = $this->input->post('email');
 		$message    = $this->input->post('message');
 
-		$data['message']= $message;
-		$data['email_from'] = $email;
-
-		$this->email->set_mailtype("html");
-		$this->email->from($email, $full_name);
+		$this->email->from($sender_email, $full_name);
 		$this->email->to(INFO_EMAIL);
 		$this->email->subject('Customer Contact');
+
+		$data['message']= $message;
+		$data['email_from']=$sender_email;
+		$this->email->set_mailtype("html");
 		$msg = $this->load->view('send-mail/index',$data,TRUE);
+		$mess = '<body style="background:#f2f2f2;font-family:arial;color:gray;text-align:center;line-height:24px;font-size: 14px;">
+						<center>
+							<table width="600" style="border-collapse:collapse;font-family:arial;color:gray;text-align:center;line-height:24px;font-size: 14px;">
+								<tr>
+									<td align="left"><img src="'.base_url('assets/css/site/site2/images/u22.png').'"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#35B8E8" style="padding:40px 0;"><h1 align="center" style="color:white;margin:0;">Email Confirmation</h1></td>
+								</tr>
+								<tr>
+									<td style="padding:30px;background:white;">Welcome to Angkorban! To complete your registration, please copy verify code below and click verify email address button. Next, past it in verify code box and click verify now. You’re done!<br/>
+										your verify code: <b>1234</b> </td>
+								</tr>
+								<tr>
+									<td align="center" style="padding:0 0 30px 0;background:white;">
+										<table style="border-collapse:collapse;">
+											<tr>
+												<td style="background:#FFB915;padding:10px 30px;"><h3 style="color:white;margin:0;font-family:arial;"><a href="'.site_url('site/confirmemail').'" style="color:white;padding:0;margin:0;text-decoration:none;">Verify email address</a></h3></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<span>This email sent by Angkorban<br/>
+							Copyright @ 2015 Angkorban. All Rights Reserved.
+							</span>
+						</center>
+					 </body>';
 		$this->email->message($msg);
-		$this->email->send();
-		echo $this->email->print_debugger();
+
+
+        if ($this->email->send()) {
+		$data['message_display'] = 'Email Successfully Send !';
+		} else {
+		$data['message_display'] =  '<p class="error_msg">Invalid Gmail Account or Password !</p>';
+		}
+		var_dump($data);
 
 	}
 
