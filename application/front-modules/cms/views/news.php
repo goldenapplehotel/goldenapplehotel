@@ -13,79 +13,37 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="blog-read">
-                    <div>
-                        <div class="info">
-                            <div class="date-box">
-                                <span class="day">28</span>
-                                <span class="month">SEP</span>
-                            </div>
-                        </div>
+                    <?php foreach ($news->result() as $value){?>
+
+
                         <div class="preview">
-                            <?php foreach ($news->result() as $key=>$value){?>
-                                <?php if($key==0){?>
-                                    <img src="<?php echo base_url();?>assets/img/news/<?php echo $value->img;?>" alt="">
-
-
+                            <img src="<?php echo base_url();?>assets/img/news/<?php echo $value->img;?>" alt="">
+                            <h6>
+                                <?php
+                                $timestamp = strtotime($value->date_news);
+                                $formattedDate = date('F d, Y', $timestamp);
+                                echo $formattedDate;
+                                ?>
+                            </h6>
                             <h3 class="blog-title">  <?php echo $value->title;?></h3>
                             <p><?php echo $value->des;?></p>
-                                <?php }?>
-                            <?php }?>
+                            <hr>
+
+
                         </div>
-                        <div class="meta-info">By: <a href="#">Admin</a> </div>
 
-
-
-                    </div>
+                    <?php }?>
+                    <div class="meta-info">By: <a href="#">Admin</a> </div>
                 </div>
 
                 <div id="blog-comment">
-                    <div class="fb-comments" data-href="http://goldenapplehotel.dev/cms/news" data-numposts="5"></div>
+                    <div class="fb-comments" data-href="http://goldenapplehotelpp.com/cms/news" data-numposts="5"></div>
                 </div>
 
             </div>
 
             <div id="sidebar" class="col-md-4">
 
-                <div class="widget latest_news">
-                    <h3>Latest News</h3>
-                    <ul class="bloglist-small">
-                        <li>
-                            <div class="date-box">
-                                <span class="day">28</span>
-                                <span class="month">SEP</span>
-                            </div>
-                            <div class="txt">
-                                <h5><a href="css/#">Lorem ipsum sit amet</a></h5>
-                                <div>
-                                    <div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="date-box">
-                                <span class="day">26</span>
-                                <span class="month">SEP</span>
-                            </div>
-                            <div class="txt">
-                                <h5><a href="css/#">Lorem ipsum sit amet</a></h5>
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            </div>
-                        </li>
-                        <li>
-                            <div class="date-box">
-                                <span class="day">18</span>
-                                <span class="month">SEP</span>
-                            </div>
-                            <div class="txt">
-                                <h5><a href="css/#">Lorem ipsum sit amet</a></h5>
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- widget category -->
-              
 
                 <!-- widget tags -->
 

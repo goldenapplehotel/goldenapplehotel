@@ -34,6 +34,13 @@
         </div>
 
     </div>
+    <div class="row mg-top-10">
+        <div class="col-md-2">Status</div>
+        <div class="col-md-10">
+            <input type="checkbox" name="status">
+        </div>
+
+    </div>
 
     <div class="row mg-top-10">
         <div class="col-md-2"> </div>
