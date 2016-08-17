@@ -51,7 +51,7 @@
                 <!-- widget text -->
                 <div class="widget widget-text">
                     <h3>Our Address</h3>
-                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.id/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=16+Riverside+Rd,+Singapore&amp;sll=-2.547988,118.037109&amp;sspn=29.394918,50.756836&amp;ie=UTF8&amp;geocode=Fb8IFgAdu40vBg&amp;split=0&amp;hq=&amp;hnear=16+Riverside+Rd,+Singapore&amp;ll=1.444031,103.779771&amp;spn=0.014522,0.024784&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=false"></iframe>
+                    <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=11%C2%B032'44.3%22N%20104%C2%B050'12.8%22E&key=AIzaSyAamVMPmk0OPeO3AsC_RHuOv_sSNFUnFVo" allowfullscreen></iframe>
 
 
                     <address>
