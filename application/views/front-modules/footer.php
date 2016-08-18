@@ -17,7 +17,7 @@
                         <div class="txt">
                             <h5><a href="css/#">General Manager</a></h5>
                             Mr. Van Daro<br>
-                            010 272 140
+                            010 272 140,088 281 1888
                         </div>
                     </li>
                     <li>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="txt">
                             <h5><a href="css/#">Hot Line</a></h5>
-                            
+                            023 901 028
                         </div>
                     </li>
                 </ul>
