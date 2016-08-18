@@ -8,18 +8,7 @@
             <div class="col-md-4">
                 <h3>Contact info</h3>
                 <ul class="bloglist-small pull-left">
-                    <li>
-                        <div class="date-box">
-                            <span class="day"><i class="fa fa-user"></i> </span>
 
-                        </div>
-                        <div class="txt">
-                            <h5><a href="css/#">CEO</a></h5>
-                            <div>
-                                <div>Mr. Example</div>
-                            </div>
-                        </div>
-                    </li>
                     <li>
                         <div class="date-box">
                             <span class="day"><i class="fa fa-user"></i> </span>
@@ -27,7 +16,8 @@
                         </div>
                         <div class="txt">
                             <h5><a href="css/#">General Manager</a></h5>
-                            Mr. Example
+                            Mr. Van Daro<br>
+                            010 272 140
                         </div>
                     </li>
                     <li>
@@ -36,8 +26,8 @@
 
                         </div>
                         <div class="txt">
-                            <h5><a href="css/#">Reciptiones</a></h5>
-                            Mr. Example
+                            <h5><a href="css/#">Hot Line</a></h5>
+                            
                         </div>
                     </li>
                 </ul>
