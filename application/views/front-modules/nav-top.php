@@ -4,7 +4,7 @@
     <div id="logo">
         <div class="inner">
             <a href="<?php echo BASE_URL;?>cms/index">
-                <img src="<?php echo BASE_URL;?>assets/img/logo/new-logo2.png" alt="" id="logo" width="20%" height="20%"></a>
+                <img src="<?php echo BASE_URL;?>assets/img/logo/new-logo2.png" alt=""  width="50%" height="50%"></a>
         </div>
     </div>
     <!-- logo close -->
@@ -22,7 +22,7 @@
         $data = $ci->Mo_Apple->getLanguageData('rooms_type',$where ,$lang);
         if($navs->num_rows()>0){
             echo '<div id="mainmenu-container">';
-            echo '<ul id="mainmenu">';
+            echo '<ul id="mainmenu" style="padding-left:0px;">';
             foreach ($navs->result() as $key => $value) {
                 if($value->_models == 'hotel'){
                     echo '<li><a href=" '.BASE_URL.'cms/'.$value->_models.'/'.$lang.' ">'.$value->title.'</a>';

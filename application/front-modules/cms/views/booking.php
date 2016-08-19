@@ -130,7 +130,7 @@
         }else {
             $.ajax({
                 type: 'post',
-                url: "<?php echo base_url();?>cms/sendEmail",
+                url: "<?php echo base_url();?>cms/room_booking",
                 data: {
 
                     full_name: full_name,

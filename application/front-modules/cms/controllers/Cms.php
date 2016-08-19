@@ -168,6 +168,7 @@ class Cms extends MX_Controller {
 	}
 
 	public function sendEmail(){
+
 		$full_name  = $this->input->post('full_name');
 		$sender_email      = $this->input->post('email');
 		$message    = $this->input->post('message');
@@ -230,7 +231,8 @@ class Cms extends MX_Controller {
 		$roomType    = $this->input->post('room_type');
 		$people_number    = $this->input->post('guest');
 		$phone    = $this->input->post('phone');
-		
+		$title = $this->input->post('title');
+
 		$data['message']= $message;
 		$data['email_from'] = $email;
 		$data['checkin'] = $checkIn;
@@ -238,6 +240,9 @@ class Cms extends MX_Controller {
 		$data['room_type'] = $roomType;
 		$data['guest'] = $people_number;
 		$data['phone'] = $phone;
+		if($title){
+			$data['title'] = $title;
+		}
 		
 		$this->email->set_mailtype("html");
 		$this->email->from($email, $full_name);

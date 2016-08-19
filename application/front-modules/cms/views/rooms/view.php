@@ -28,6 +28,7 @@
                         <!-- room begin -->
                            
                             <div class="text">
+                             <h2 style="margin-top:0px;"><?php echo $value->title?></h2>
                             <h4>Overview</h4>
                             <p><?php echo $value->description;?></p>
                             <div class="room-specs">
@@ -52,7 +53,57 @@
                         
                         <!-- room close -->
                         <?php }?>
-                        <a href="javascript:void(0)" id="btbooking" class="btn-border" >Book Now</a>
+                        <div class="col-md-12 dis-none pd-all-0" id="dis_none">
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <input type="text" class="form-control" name="name" id="full_name" placeholder="Your Name" />
+                                <input type="hidden" class="form-control" name="title" value="<?php echo $value->title?>" id="full_title" />
+                                <input type="hidden" class="form-control" name="room_code" value="<?php echo $value->Id?>" id="room_code" />
+                            </div>
+
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Your Email *" />
+                                <div id="error_email" class="error">Please check your email</div>
+                            </div>
+
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <select name="guest" id="guest" class="form-control">
+                                    <option value="">Number of Guests</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone number" />
+                                <div id="error_person_num" class="error">Please check again</div>
+                            </div>
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <input type="text" class="form-control" name="checkin" id="checkin" placeholder="Check In Date" />
+                                <div id="error_datepicker" class="error">Please check again</div>
+                            </div>
+
+                            <div class="col-md-12 mg-bottom-10 pd-all-0">
+                                <input type="text" class="form-control" name="checkout" id="checkout" placeholder="Check Out Date" />
+                                <div id="error_person_num" class="error">Please check again</div>
+                            </div>
+                            
+                            <div class="col-md-12  mg-bottom-10 pd-all-0">
+                                <textarea cols="6" rows="4" name="message" id="message" class="form-control" placeholder="Any Messages?"></textarea>
+                                <div id="error_message" class="error">Please check your message</div>
+                                <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                                <div id="mail_failed" class="error">Error, email not sent</div>
+
+                                <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                                <div id="mail_failed" class="error">Error, email not sent</div>
+                                <div id="alert-box"></div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" id="btbooking" class="btn-border dis-none dis-block" >Book Now</a>
+                        <a href="javascript:void(0)" onclick="booking_room()"  id="btsubmit" class="btn-border dis-none" >Book</a>
+                        <a href="javascript:void(0)" id="btbookingcancel" class="btn-border dis-none" >Cacnel</a>
                     </div>
                 </div>
 
@@ -61,71 +112,90 @@
         </div>
     </div>
 </div>
-<div class="top-booking" id="tbooking" style="display:none;">
-    <div class="col-md-12" style="padding-left:0px;">
-        <div class="col-md-6 mg-bottom-10">
-            <input type="text" class="form-control" name="name" id="full_name" placeholder="Your Name" />
-        </div>
-
-        <div class="col-md-6 mg-bottom-10">
-            <input type="text" class="form-control" name="email" id="email" placeholder="Your Email *" />
-            <div id="error_email" class="error">Please check your email</div>
-        </div>
-
-        <div class="col-md-6 mg-bottom-10">
-            <select name="guest" id="guest" class="form-control">
-                <option>Number of Guests</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>>5</option>
-            </select>
-        </div>
-        <div class="col-md-6 mg-bottom-10">
-            <input type="text" class="form-control" name="checkin" id="checkin" placeholder="Check In Date" />
-            <div id="error_datepicker" class="error">Please check again</div>
-        </div>
-
-        <div class="col-md-6 mg-bottom-10">
-            <input type="text" class="form-control" name="checkout" id="checkout" placeholder="Check Out Date" />
-            <div id="error_person_num" class="error">Please check again</div>
-        </div>
-
-        
-        <div class="col-md-6">
-            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone number" />
-            <div id="error_person_num" class="error">Please check again</div>
-        </div>
-        <div class="col-md-12  mg-bottom-10">
-            <textarea cols="6" rows="4" name="message" id="message" class="form-control" placeholder="Any Messages?"></textarea>
-            <div id="error_message" class="error">Please check your message</div>
-            <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-            <div id="mail_failed" class="error">Error, email not sent</div>
-
-            <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-            <div id="mail_failed" class="error">Error, email not sent</div>
-            <div id="alert-box"></div>
-        </div>
-        <div class="col-md-4  mg-bottom-10">
-            <input type="submit" onclick="booking_room()" id="send" value="Send" class="btn btn-custom" />
-            <button type="button" class="btn  btn-custom" onclick="removewDiv('tbooking')">Cancel</button>
-        </div>
-
-    </div>
-</div>
-<!-- content close -->
 
 <script>
     jQuery(document).ready(function () {
         jQuery('#checkin').datepicker();
         jQuery('#checkout').datepicker();
-    });
-    function removewDiv(id){
-        console.log('so');
-        $( "#"+id ).fadeOut(600,function(){
+        jQuery('#btbooking').click(function() {
+            $(this).toggleClass('dis-block');
+            $('#btsubmit').toggleClass('dis-none');
             
-        })
+            $('#dis_none').toggleClass( "dis-block", 8000);
+            $('#btbookingcancel').toggleClass( "dis-none");
+            $('#alert-box').html('');
+        });
+        jQuery('#btbookingcancel').click(function() {
+            $('#btbooking').toggleClass('dis-block');
+            $('#btsubmit').toggleClass('dis-none');
+            
+            $('#dis_none').toggleClass( "dis-block", 8000);
+            $(this).toggleClass( "dis-none");
+            $('#alert-box').html('');
+        });
+    });
+    
+</script>
+<script>
+    
+    function booking_room(){
+
+        $('#alert-box').html('');
+
+        var full_name = $('#full_name').val();
+        var title = $('#full_title').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var guest = $('#guest').val();
+        var checkin = $('#checkin').val();
+        var checkout = $('#checkout').val();
+        var room_type = $('#room_code').val();
+        var phone = $('#phone').val();
+
+        var resultData = '';
+        if(full_name == ''||email==''||message==''||guest==''||checkin==''||checkout==''||room_type==''){
+            resultData += '<div class="alert alert-warning">';
+            resultData += '<strong>Oop!</strong> Please fill your information.';
+            resultData += '</div>';
+            $('#alert-box').append(resultData);
+
+            $('#icon-send-mail').show();
+            $('#closet-loading-gif').hide();
+        }else {
+            $.ajax({
+                type: 'post',
+                url: "<?php echo base_url();?>cms/room_booking",
+                data: {
+
+                    full_name: full_name,
+                    email: email,
+                    message: message,
+                    checkin :checkin,
+                    checkout :checkout,
+                    room_type :room_type,
+                    guest:guest,
+                    phone:phone,
+                    title:title,
+                },
+                success: function (results) {
+                console.log(results);
+                    $('#icon-send-mail').show();
+                    $('#closet-loading-gif').hide();
+                    $('#btbooking').toggleClass('dis-block');
+                    $('#btsubmit').toggleClass('dis-none');
+                    
+                    $('#dis_none').toggleClass( "dis-block");
+                    $('#btbookingcancel').toggleClass( "dis-none");
+
+                    resultData += '<div class="alert alert-success">';
+                    resultData += '<strong>Success! You has booking room successfully.</strong>.';
+                    resultData += '</div>';
+
+                    $('#alert-box').append(resultData);
+                }
+            });
+        }
     }
+
+
 </script>

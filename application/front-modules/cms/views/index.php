@@ -6,7 +6,7 @@
         <?php foreach ($get_room->result() as $value){?>
         <div class="room-item item">
             <div class="overlay">
-                <a href="single-room.html">
+                <a href="<?php echo BASE_URL.'cms/hotel/view/'.$value->Id.'/'.$lang;?>">
                     <h1><?php echo $value->title?></h1>
                 </a>
                 <div class="desc">

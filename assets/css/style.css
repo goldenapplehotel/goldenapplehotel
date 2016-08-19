@@ -79,7 +79,7 @@ header #logo {
 }
 
 header #logo .inner {
-    margin:40px 0;
+    margin:15px 0px;
     display:inline-block
 }
 
@@ -178,7 +178,7 @@ header #logo .inner {
 
 #mainmenu a {
     display:block;
-    padding:20px 20px 17px;
+    padding:20px 15px 17px;
     text-decoration:none;
     color:#333; /*when normal*/
 }
@@ -2400,4 +2400,14 @@ control nav
 }
 .txt-align-center{
     text-align:center;
+}
+
+.dis-none {
+    display: none;
+}
+.dis-block {
+    display: inline;
+}
+.pd-all-0{
+    padding: 0px;
 }
