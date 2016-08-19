@@ -40,6 +40,10 @@
         </div>
 
     </div>
+    <div class="row mg-top-10">
+        <div class="col-md-2">Status</div>
+        <div class="col-md-4"><input type="checkbox" <?php echo func_checkbox_check($banner_row->_status);?> name="status"></div>
+    </div>
 
     <div class="row">
         <div class="col-md-12">

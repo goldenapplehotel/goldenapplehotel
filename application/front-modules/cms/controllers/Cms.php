@@ -87,6 +87,7 @@ class Cms extends MX_Controller {
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
 		}
+		$data['explores']=$this->ci->Mo_Apple->getLanguageData('explores',array('title'=>'title','description'=>'description'),$data['lang'],array('_status'=>1));
 		$data['banner'] = 'front-modules/blank';
 		$data['main_content'] = 'explore';
 		$this->load->view('front-modules/template', $data);
@@ -99,6 +100,7 @@ class Cms extends MX_Controller {
 		if($segs){
 			$data['lang'] = $this->Cms_model->language_validation($segs);
 		}
+		$data['news']=$this->ci->Mo_Apple->getLanguageData('news',array('title'=>'title','des'=>'des'),$data['lang'],array('_status'=>1));
 		$data['banner'] = 'front-modules/blank';
 		$data['main_content'] = 'news';
 		$this->load->view('front-modules/template', $data);

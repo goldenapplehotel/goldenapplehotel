@@ -153,7 +153,11 @@ class Contents extends MX_Controller
 	}
 
 	public function save_banner(){
-
+		if($this->input->post('status') == 'on'){
+			$status = 1;
+		}else{
+			$status = 0;
+		}
 		$config = array(
 			'upload_path'	=>FILE_UPLOAD_PATH.'/banner/',
 			'allowed_types'	=>ALLOWED_TYPES,
@@ -172,6 +176,7 @@ class Contents extends MX_Controller
 				'en_description' 	            =>$this->input->post('en_des'),
 				'ch_description' 	            =>$this->input->post('ch_des'),
 				'url'                  =>$this->upload->file_name,
+				'_status' 	            =>$status
 
 			);
 			$this->db->insert('tbl_banner', $userArray);
@@ -457,7 +462,7 @@ class Contents extends MX_Controller
 				'ch_title' 	            =>$this->input->post('ch_title'),
 				'en_des' 	    		=>$this->input->post('en_des'),
 				'ch_des' 	    		=>$this->input->post('ch_des'),
-				'date_news'             =>date('y/m/d'),
+				'date_news'             =>date('Y/M/D'),
 				'img'                   =>$this->upload->file_name,
 				'_status'			    =>$status
 
